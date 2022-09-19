@@ -7,8 +7,7 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
-import org.jhotdraw.draw.figure.Figure;
-import org.jhotdraw.draw.figure.AbstractAttributedCompositeFigure;
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
@@ -25,6 +24,8 @@ import static org.jhotdraw.draw.AttributeKeys.STROKE_MITER_LIMIT;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import static org.jhotdraw.draw.AttributeKeys.WINDING_RULE;
 import org.jhotdraw.draw.AttributeKeys.WindingRule;
+import org.jhotdraw.draw.figure.AbstractAttributedCompositeFigure;
+import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.handle.Handle;
 import org.jhotdraw.draw.handle.TransformHandleKit;
 import org.jhotdraw.geom.Geom;
@@ -58,6 +59,7 @@ public class SVGPathFigure extends AbstractAttributedCompositeFigure implements 
     /**
      * Creates a new instance.
      */
+    @FeatureEntryPoint(value = "SVGPathFigure")
     public SVGPathFigure() {
         add(new SVGBezierFigure());
         SVGAttributeKeys.setDefaults(this);

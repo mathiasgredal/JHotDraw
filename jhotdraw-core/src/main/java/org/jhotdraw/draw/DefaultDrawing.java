@@ -7,7 +7,7 @@
  */
 package org.jhotdraw.draw;
 
-import org.jhotdraw.draw.figure.Figure;
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
@@ -21,6 +21,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
 import static org.jhotdraw.draw.AttributeKeys.*;
+import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.geom.Geom;
 import org.jhotdraw.util.ReversedList;
 
@@ -56,6 +57,7 @@ public class DefaultDrawing
         invalidateSortOrder();
     }
 
+    @FeatureEntryPoint(value = "Drawing")
     @Override
     public void draw(Graphics2D g) {
         synchronized (getLock()) {
