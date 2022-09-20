@@ -1,8 +1,6 @@
-/jhotdraw7/build/
-/jhotdraw7/dist/
-/jhotdraw7/nbproject/private/
 target
 *.patch
 *.class
 nb-configuration.xml
-*.*~
+.idea/*
+*.ftf
