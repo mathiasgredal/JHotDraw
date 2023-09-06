@@ -43,19 +43,23 @@
     </dependencies>
     <build>
         <plugins>
-            <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-exec-plugin</artifactId>
-               <version>3.1.0</version>
-               <configuration>
-                   <executable>java</executable>
-                   <arguments>
-                        <argument>-classpath</argument>        
-                        <classpath/>
-                        <argument>org.jhotdraw.samples.svg.Main</argument>
-                   </arguments>
-               </configuration>
-           </plugin>
+<plugin>
+     <groupId>org.codehaus.mojo</groupId>
+     <artifactId>exec-maven-plugin</artifactId>
+     <version>3.1.0</version>
+     <executions>
+         <execution>
+            <id>run-java</id>
+            <phase>install</phase>
+            <goals>
+                <goal>java</goal>
+            </goals>
+         </execution>
+      </executions>
+      <configuration>
+           <mainClass>org.jhotdraw.samples.svg.Main</mainClass>
+      </configuration>
+</plugin>         
         </plugins>
     </build>
 </project>
