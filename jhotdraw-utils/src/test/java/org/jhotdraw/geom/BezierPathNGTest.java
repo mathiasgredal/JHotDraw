@@ -18,15 +18,14 @@
  */
 package org.jhotdraw.geom;
 
+import org.junit.jupiter.api.*;
+
 import java.awt.geom.Path2D;
 import java.awt.geom.PathIterator;
 import java.awt.geom.Point2D;
-import static org.testng.Assert.*;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 
 /**
  *
@@ -37,19 +36,19 @@ public class BezierPathNGTest {
     public BezierPathNGTest() {
     }
 
-    @BeforeClass
+    @BeforeAll
     public static void setUpClass() throws Exception {
     }
 
-    @AfterClass
+    @AfterAll
     public static void tearDownClass() throws Exception {
     }
 
-    @BeforeMethod
+    @BeforeEach
     public void setUpMethod() throws Exception {
     }
 
-    @AfterMethod
+    @AfterEach
     public void tearDownMethod() throws Exception {
     }
 

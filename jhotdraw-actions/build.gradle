@@ -1,0 +1,9 @@
+plugins {
+    id 'java-library'
+}
+
+dependencies {
+    implementation project(':jhotdraw-api')
+    implementation project(':jhotdraw-datatransfer')
+    implementation project(':jhotdraw-utils')
+}

@@ -19,7 +19,7 @@
 package org.jhotdraw.samples.svg;
 
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  *

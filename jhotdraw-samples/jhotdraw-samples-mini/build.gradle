@@ -1,0 +1,16 @@
+plugins {
+    id 'application'
+}
+
+dependencies {
+    implementation project(':jhotdraw-samples:jhotdraw-samples-misc')
+    implementation project(':jhotdraw-api')
+    implementation project(':jhotdraw-core')
+    implementation project(':jhotdraw-gui')
+    implementation project(':jhotdraw-utils')
+    implementation project(':jhotdraw-xml')
+}
+
+application {
+    mainClass = 'org.jhotdraw.samples.mini.EditorSample'
+}

@@ -1,0 +1,12 @@
+rootProject.name = 'JHotDraw'
+
+include 'jhotdraw-utils'
+include 'jhotdraw-api'
+include 'jhotdraw-core'
+include 'jhotdraw-datatransfer'
+include 'jhotdraw-xml'
+include 'jhotdraw-actions'
+include 'jhotdraw-gui'
+include 'jhotdraw-app'
+include 'jhotdraw-samples:jhotdraw-samples-mini'
+include 'jhotdraw-samples:jhotdraw-samples-misc'
