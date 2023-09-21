@@ -50,7 +50,7 @@ public class TextFigure extends AbstractAttributedDecoratedFigure
      * Creates a new instance.
      */
     public TextFigure() {
-        this(ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").
+        this(ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels",LocaleUtil.getDefault())).
                 getString("TextFigure.defaultText"));
     }
 

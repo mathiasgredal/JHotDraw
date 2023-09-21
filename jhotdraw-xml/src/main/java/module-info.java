@@ -1,4 +1,4 @@
-module XML {
+open module XML {
     requires java.datatransfer;
     requires java.xml;
     requires java.desktop;

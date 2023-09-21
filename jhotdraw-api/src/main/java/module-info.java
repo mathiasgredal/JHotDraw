@@ -1,4 +1,4 @@
-module API {
+open module API {
     requires java.desktop;
 
     exports org.jhotdraw.api.app;

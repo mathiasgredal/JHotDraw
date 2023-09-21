@@ -154,7 +154,7 @@ public class ConnectorHandle extends AbstractHandle {
 
                 @Override
                 public String getPresentationName() {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                     return labels.getString("edit.createConnectionFigure.text");
                 }
 

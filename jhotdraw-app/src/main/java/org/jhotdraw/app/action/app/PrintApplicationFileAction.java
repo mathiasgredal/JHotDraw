@@ -9,6 +9,7 @@ package org.jhotdraw.app.action.app;
 
 import java.awt.event.*;
 import java.io.*;
+import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -87,7 +88,7 @@ public class PrintApplicationFileAction extends PrintFileAction {
                     app.dispose(p);
                 } catch (InterruptedException | ExecutionException ex) {
                     Logger.getLogger(PrintApplicationFileAction.class.getName()).log(Level.SEVERE, null, ex);
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     app.dispose(p);
                     JOptionPane.showMessageDialog(
                             null,

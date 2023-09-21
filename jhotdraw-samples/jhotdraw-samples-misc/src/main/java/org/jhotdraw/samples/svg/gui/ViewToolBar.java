@@ -13,6 +13,7 @@ import org.jhotdraw.gui.plaf.palette.PaletteButtonUI;
 import java.awt.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.text.DefaultFormatterFactory;
@@ -41,7 +42,7 @@ public class ViewToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public ViewToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         setName(labels.getString(getID() + ".toolbar"));
         setDisclosureStateCount(3);
     }
@@ -66,7 +67,7 @@ public class ViewToolBar extends AbstractToolBar {
                 if (editor == null) {
                     break;
                 }
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;
@@ -109,7 +110,7 @@ public class ViewToolBar extends AbstractToolBar {
                 if (editor == null) {
                     break;
                 }
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 layout = new GridBagLayout();
                 p.setLayout(layout);
                 // Grid size field and toggle grid button

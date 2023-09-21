@@ -15,6 +15,7 @@ import java.io.*;
 import java.lang.reflect.*;
 import java.net.URI;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.action.edit.RedoAction;
 import org.jhotdraw.action.edit.UndoAction;
@@ -170,7 +171,7 @@ public class SVGView extends AbstractView {
                 }
             }
             if (!success) {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                 throw new IOException(labels.getFormatted("file.open.unsupportedFileFormat.message", URIUtil.getName(uri)));
             }
             SwingUtilities.invokeAndWait(new Runnable() {

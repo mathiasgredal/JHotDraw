@@ -85,7 +85,7 @@ public class BezierTool extends AbstractTool {
         this.prototype = prototype;
         this.attributes = attributes;
         if (name == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             name = labels.getString("edit.createFigure.text");
         }
         this.presentationName = name;

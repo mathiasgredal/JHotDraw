@@ -13,6 +13,8 @@ import org.jhotdraw.api.app.View;
 import org.jhotdraw.app.action.AbstractSaveUnsavedChangesAction;
 import org.jhotdraw.util.*;
 
+import java.util.ResourceBundle;
+
 /**
  * Clears (empties) the contents of the active view.
  * <p>
@@ -42,7 +44,7 @@ public class ClearFileAction extends AbstractSaveUnsavedChangesAction {
      */
     public ClearFileAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, "file.clear");
     }
 

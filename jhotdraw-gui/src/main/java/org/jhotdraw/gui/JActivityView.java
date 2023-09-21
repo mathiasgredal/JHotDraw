@@ -12,8 +12,11 @@ package org.jhotdraw.gui;
 import org.jhotdraw.api.gui.ActivityModel;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.event.*;
+
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -76,7 +79,7 @@ public class JActivityView extends javax.swing.JPanel {
      * Creates a new JActivityView.
      */
     public JActivityView(ActivityModel model) {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.gui.Labels", LocaleUtil.getDefault()));
         initComponents();
         closeButton.setVisible(false);
         setModel(model);

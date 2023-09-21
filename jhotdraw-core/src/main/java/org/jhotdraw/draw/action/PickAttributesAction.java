@@ -12,6 +12,7 @@ import java.util.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.FigureSelectionEvent;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -31,7 +32,7 @@ public class PickAttributesAction extends AbstractSelectedAction {
      */
     public PickAttributesAction(DrawingEditor editor) {
         super(editor);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, "edit.pickAttributes");
         updateEnabledState();
     }

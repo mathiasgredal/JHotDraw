@@ -18,6 +18,7 @@ import java.lang.reflect.*;
 import java.net.URI;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.filechooser.FileFilter;
@@ -92,7 +93,7 @@ public class ODGView extends AbstractView {
                 setHasUnsavedChanges(undo.hasSignificantEdits());
             }
         });
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         JPanel placardPanel = new JPanel(new BorderLayout());
         javax.swing.AbstractButton pButton;
         pButton = ButtonFactory.createZoomButton(view);

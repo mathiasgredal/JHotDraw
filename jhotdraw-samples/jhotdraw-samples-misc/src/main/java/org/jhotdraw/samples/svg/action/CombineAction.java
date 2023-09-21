@@ -38,7 +38,7 @@ public class CombineAction extends AbstractSelectedAction {
      */
     private boolean isCombineAction;
     private ResourceBundleUtil labels
-            = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+            = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
 
     /**
      * Creates a new instance.
@@ -55,7 +55,7 @@ public class CombineAction extends AbstractSelectedAction {
         super(editor);
         this.prototype = prototype;
         this.isCombineAction = isGroupingAction;
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
         updateEnabledState();
     }

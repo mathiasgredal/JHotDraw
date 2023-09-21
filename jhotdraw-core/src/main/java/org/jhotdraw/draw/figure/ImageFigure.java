@@ -315,7 +315,7 @@ public class ImageFigure extends AbstractAttributedDecoratedFigure
         try (InputStream in = new FileInputStream(file)) {
             loadImage(in);
         } catch (Throwable t) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             IOException e = new IOException(labels.getFormatted("file.failedToLoadImage.message", file.getName()));
             e.initCause(t);
             throw e;
@@ -332,7 +332,7 @@ public class ImageFigure extends AbstractAttributedDecoratedFigure
         }
         BufferedImage img = ImageIO.read(new ByteArrayInputStream(baos.toByteArray()));
         if (img == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             throw new IOException(labels.getFormatted("file.failedToLoadImage.message", in.toString()));
         }
         imageData = baos.toByteArray();

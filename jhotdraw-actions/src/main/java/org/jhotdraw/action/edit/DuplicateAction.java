@@ -9,6 +9,7 @@ package org.jhotdraw.action.edit;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.api.gui.EditableComponent;
 import org.jhotdraw.util.*;
@@ -65,7 +66,7 @@ public class DuplicateAction extends AbstractSelectionAction {
      */
     public DuplicateAction(JComponent target) {
         super(target);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 

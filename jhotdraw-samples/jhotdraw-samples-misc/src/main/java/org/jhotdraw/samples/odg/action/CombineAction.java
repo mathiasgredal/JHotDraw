@@ -26,7 +26,7 @@ public class CombineAction extends GroupAction {
     private static final long serialVersionUID = 1L;
     public static final String ID = "edit.combinePaths";
     private ResourceBundleUtil labels
-            = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+            = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.odg.Labels", LocaleUtil.getDefault()));
 
     /**
      * Creates a new instance.

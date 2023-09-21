@@ -11,6 +11,7 @@ package org.jhotdraw.gui.plaf.palette.colorchooser;
 import java.awt.Color;
 import java.util.Collections;
 import java.util.LinkedList;
+import java.util.ResourceBundle;
 import javax.swing.Icon;
 import javax.swing.ListModel;
 import javax.swing.colorchooser.AbstractColorChooserPanel;
@@ -21,6 +22,7 @@ import org.jhotdraw.color.HSBColorSpace;
 import org.jhotdraw.gui.plaf.palette.PaletteListUI;
 import org.jhotdraw.gui.plaf.palette.PaletteLookAndFeel;
 import org.jhotdraw.gui.plaf.palette.PalettePanelUI;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -74,7 +76,7 @@ public class PaletteSwatchesChooser extends AbstractColorChooserPanel {
         // FIXME - Move this into a lazy initializer
         HSBColorSpace hsbCS = HSBColorSpace.getInstance();
         LinkedList<ColorIcon> m = new LinkedList<>();
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.gui.Labels", LocaleUtil.getDefault()));
         for (int s = 2; s <= 8; s += 2) {
             for (int h = 0; h < 12; h++) {
                 Color c = new Color(hsbCS, new float[]{(h) / 12f, s * 0.1f, 1f}, 1f);

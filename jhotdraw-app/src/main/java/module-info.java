@@ -1,4 +1,4 @@
-module App {
+open module App {
     exports org.jhotdraw.app;
     exports org.jhotdraw.app.action.file;
     requires Actions;
@@ -11,5 +11,4 @@ module App {
     requires java.desktop;
     requires java.prefs;
     requires java.logging;
-
 }

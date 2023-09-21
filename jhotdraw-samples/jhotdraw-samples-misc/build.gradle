@@ -20,8 +20,10 @@ application {
     mainClass = 'org.jhotdraw.samples.svg.Main'
     project.configurations.implementation.setCanBeResolved(true)
     applicationDefaultJvmArgs = [
-            "-javaagent:${project.configurations.implementation.find { it.name.startsWith("aspectjweaver") }}",
-            '--add-opens=java.base/java.lang=org.aspectj.weaver'
+//            "-javaagent:${project.configurations.implementation.find { it.name.startsWith("aspectjweaver") }}",
+//            '--add-opens=java.base/java.lang=org.aspectj.weaver'
+            "--add-opens=java.base/java.util=Utils",
+            "--add-opens=java.base/java.lang.ref=Utils"
     ]
 }
 

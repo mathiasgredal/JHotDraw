@@ -82,7 +82,7 @@ public class SelectionColorChooserHandler extends AbstractSelectedAction
             name = (String) getValue(AbstractAction.NAME);
             }
             if (name == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             name = labels.getString("attribute.text");
             }
             return name;*/

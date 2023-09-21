@@ -11,6 +11,8 @@ import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.util.*;
 
+import java.util.ResourceBundle;
+
 /**
  * Presents an {@code URIChooser} and then saves the active view to the
  * specified location.
@@ -35,7 +37,7 @@ public class SaveFileAsAction extends SaveFileAction {
      */
     public SaveFileAsAction(Application app, View view) {
         super(app, view, true);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 }

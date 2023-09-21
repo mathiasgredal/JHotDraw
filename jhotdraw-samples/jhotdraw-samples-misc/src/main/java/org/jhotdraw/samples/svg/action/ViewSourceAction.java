@@ -11,6 +11,7 @@ import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.io.*;
+import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 import javax.swing.*;
 import javax.swing.event.UndoableEditEvent;
@@ -22,6 +23,7 @@ import org.jhotdraw.api.app.View;
 import org.jhotdraw.draw.Drawing;
 import org.jhotdraw.samples.svg.SVGView;
 import org.jhotdraw.samples.svg.io.SVGOutputFormat;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 import org.jhotdraw.util.prefs.PreferencesUtil;
 
@@ -45,13 +47,13 @@ public class ViewSourceAction extends AbstractViewAction {
      */
     public ViewSourceAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         final SVGView v = (SVGView) getActiveView();
         Drawing drawing = v.getDrawing();
         final JDialog dialog;
@@ -93,7 +95,7 @@ public class ViewSourceAction extends AbstractViewAction {
                             updateSource(newDrawing, ta);
                         }
                     } else if (evt.getPropertyName() == View.TITLE_PROPERTY) {
-                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                         dialog.setTitle(labels.getFormatted("view.viewSource.titleText", v.getTitle()));
                     }
                 }

@@ -16,6 +16,7 @@ import java.beans.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.net.URI;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.*;
 import org.jhotdraw.action.edit.RedoAction;
@@ -81,7 +82,7 @@ public class DrawView extends AbstractView {
                 setHasUnsavedChanges(undo.hasSignificantEdits());
             }
         });
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         JPanel placardPanel = new JPanel(new BorderLayout());
         javax.swing.AbstractButton pButton;
         pButton = ButtonFactory.createZoomButton(view);
@@ -166,7 +167,7 @@ public class DrawView extends AbstractView {
                 }
             }
             if (!success) {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                 throw new IOException(labels.getFormatted("file.open.unsupportedFileFormat.message", URIUtil.getName(f)));
             }
             SwingUtilities.invokeAndWait(new Runnable() {

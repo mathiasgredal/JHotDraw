@@ -101,7 +101,7 @@ public class ODGApplicationModel extends DefaultApplicationModel {
     private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         ButtonFactory.addSelectionToolTo(tb, editor, createDrawingActions(editor), createSelectionActions(editor));
         tb.addSeparator();
         attributes = new HashMap<AttributeKey<?>, Object>();
@@ -136,7 +136,7 @@ public class ODGApplicationModel extends DefaultApplicationModel {
     }
 
     private void addColorButtonsTo(JToolBar bar, DrawingEditor editor) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         HashMap<AttributeKey<?>, Object> defaultAttributes = new HashMap<AttributeKey<?>, Object>();
         STROKE_GRADIENT.put(defaultAttributes, (Gradient) null);
         bar.add(
@@ -165,7 +165,7 @@ public class ODGApplicationModel extends DefaultApplicationModel {
      */
     @Override
     public java.util.List<JToolBar> createToolBars(Application a, View pr) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         ODGView p = (ODGView) pr;
         DrawingEditor editor;
         if (p == null) {
@@ -200,7 +200,7 @@ public class ODGApplicationModel extends DefaultApplicationModel {
     @Override
     public ActionMap createActionMap(Application a, View v) {
         ActionMap m = super.createActionMap(a, v);
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         AbstractAction aa;
         m.put(ExportFileAction.ID, new ExportFileAction(a, v));
         m.put("view.toggleGrid", aa = new ToggleViewPropertyAction(a, v, ODGView.GRID_VISIBLE_PROPERTY));

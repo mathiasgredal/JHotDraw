@@ -11,8 +11,11 @@ import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.figure.TextHolderFigure;
 import java.awt.*;
 import java.awt.geom.*;
+import java.util.ResourceBundle;
 
 import static org.jhotdraw.draw.AttributeKeys.*;
+
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -89,7 +92,7 @@ public class TextOverflowHandle extends AbstractHandle {
     @Override
     public String getToolTipText(Point p) {
         return (getOwner().isTextOverflow())
-                ? ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").
+                ? ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())).
                         getString("handle.textOverflow.toolTipText")
                 : null;
     }

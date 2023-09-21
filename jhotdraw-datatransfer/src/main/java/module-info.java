@@ -1,4 +1,4 @@
-module Datatransfer {
+open module Datatransfer {
     requires Utils;
 
     requires java.desktop;

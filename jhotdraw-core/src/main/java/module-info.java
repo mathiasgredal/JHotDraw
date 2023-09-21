@@ -1,4 +1,4 @@
-module Core {
+open module Core {
     requires Actions;
     requires API;
     requires XML;

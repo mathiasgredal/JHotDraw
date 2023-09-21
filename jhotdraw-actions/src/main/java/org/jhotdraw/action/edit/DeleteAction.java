@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ResourceBundle;
 import javax.swing.JComponent;
 import javax.swing.text.*;
 import org.jhotdraw.api.gui.EditableComponent;
@@ -104,7 +105,7 @@ public class DeleteAction extends TextAction {
             };
             target.addPropertyChangeListener(new WeakPropertyChangeListener(propertyHandler));
         }
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 

@@ -98,7 +98,7 @@ public class AttributeKey<T> implements Serializable {
         this.clazz = clazz;
         this.defaultValue = defaultValue;
         this.isNullValueAllowed = isNullValueAllowed;
-        this.labels = (labels == null) ? ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels") : labels;
+        this.labels = (labels == null) ? ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())) : labels;
     }
 
     /**

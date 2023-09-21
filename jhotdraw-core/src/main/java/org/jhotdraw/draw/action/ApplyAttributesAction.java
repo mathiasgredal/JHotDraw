@@ -12,6 +12,7 @@ import java.util.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.FigureSelectionEvent;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.ResourceBundleUtil;
 
@@ -32,7 +33,7 @@ public class ApplyAttributesAction extends AbstractSelectedAction {
      */
     public ApplyAttributesAction(DrawingEditor editor) {
         super(editor);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, "edit.applyAttributes");
         updateEnabledState();
     }
@@ -52,7 +53,7 @@ public class ApplyAttributesAction extends AbstractSelectedAction {
     @SuppressWarnings("unchecked")
     public void applyAttributes() {
         DrawingEditor editor = getEditor();
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         CompositeEdit edit = new CompositeEdit(labels.getString("edit.applyAttributes.text"));
         DrawingView view = getView();
         view.getDrawing().fireUndoableEditHappened(edit);

@@ -1,4 +1,4 @@
-module Samples {
+open module Samples {
     requires Actions;
     requires API;
     requires GUI;

@@ -81,7 +81,7 @@ public class NetApplicationModel extends DefaultApplicationModel {
     @Override
     public ActionMap createActionMap(Application a, View v) {
         ActionMap m = super.createActionMap(a, v);
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         AbstractAction aa;
         m.put(ExportFileAction.ID, new ExportFileAction(a, v));
         m.put("view.toggleGrid", aa = new ToggleViewPropertyAction(a, v, NetView.GRID_VISIBLE_PROPERTY));
@@ -111,7 +111,7 @@ public class NetApplicationModel extends DefaultApplicationModel {
     private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.net.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.net.Labels", LocaleUtil.getDefault()));
         ButtonFactory.addSelectionToolTo(tb, editor);
         tb.addSeparator();
         attributes = new HashMap<AttributeKey<?>, Object>();
@@ -129,7 +129,7 @@ public class NetApplicationModel extends DefaultApplicationModel {
      */
     @Override
     public java.util.List<JToolBar> createToolBars(Application a, View pr) {
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         NetView p = (NetView) pr;
         DrawingEditor editor;
         if (p == null) {

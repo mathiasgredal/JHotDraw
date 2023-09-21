@@ -10,10 +10,14 @@ package org.jhotdraw.samples.svg.figures;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.geom.*;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 import org.jhotdraw.draw.handle.AbstractHandle;
 import org.jhotdraw.draw.handle.HandleAttributeKeys;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
+
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -86,7 +90,7 @@ public class LinkHandle extends AbstractHandle {
     @Override
     public String getToolTipText(Point p) {
         return (getOwner().get(LINK) != null)
-                ? ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels").
+                ? ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault())).
                         getString("handle.link.toolTipText")
                 : null;
     }

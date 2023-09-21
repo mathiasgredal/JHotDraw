@@ -16,6 +16,7 @@ import javax.swing.text.*;
 import javax.swing.undo.*;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.util.ActionUtil;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -102,7 +103,7 @@ public class AttributeToggler<T> extends AbstractAction {
                     name = (String) getValue(AbstractAction.NAME);
                 }
                 if (name == null) {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                     name = labels.getString("attribute.text");
                 }
                 return name;

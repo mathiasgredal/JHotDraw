@@ -1,4 +1,4 @@
-module Utils {
+open module Utils {
     requires java.desktop;
     requires java.prefs;
     requires org.aspectj.weaver;

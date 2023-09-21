@@ -18,11 +18,13 @@ import java.beans.PropertyChangeListener;
 import java.lang.reflect.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 import javax.swing.*;
 import javax.swing.plaf.metal.*;
 import org.jhotdraw.gui.event.ActivityManagerEvent;
 import org.jhotdraw.gui.event.ActivityManagerListener;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 import org.jhotdraw.util.prefs.PreferencesUtil;
 
@@ -132,7 +134,7 @@ public class JActivityWindow extends javax.swing.JFrame {
     }
 
     public JActivityWindow(ActivityManager pm) {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.gui.Labels", LocaleUtil.getDefault()));
         initComponents();
         setFocusable(false); // needed for Mac OS X
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);

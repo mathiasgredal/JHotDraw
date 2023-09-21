@@ -18,6 +18,7 @@ import org.jhotdraw.draw.event.TransformRestoreEdit;
 import static org.jhotdraw.draw.handle.HandleAttributeKeys.*;
 import org.jhotdraw.draw.locator.Locator;
 import org.jhotdraw.draw.locator.RelativeLocator;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -155,7 +156,7 @@ public class TransformHandleKit {
 
         @Override
         public String getToolTipText(Point p) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             return labels.getString("handle.transform.toolTipText");
         }
 

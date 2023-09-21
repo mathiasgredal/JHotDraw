@@ -108,7 +108,7 @@ public class SVGApplet extends JApplet {
         if (getParameter("Locale") != null) {
             Locale.setDefault(new Locale(getParameter("Locale")));
         }
-        final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         // Set look and feel
         // -----------------
         try {

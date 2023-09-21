@@ -11,6 +11,7 @@ import java.awt.Component;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
 import java.net.URI;
+import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,6 +29,7 @@ import org.jhotdraw.gui.JSheet;
 import org.jhotdraw.gui.event.SheetEvent;
 import org.jhotdraw.gui.event.SheetListener;
 import org.jhotdraw.net.URIUtil;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -56,7 +58,7 @@ public class ExitAction extends AbstractApplicationAction {
      */
     public ExitAction(Application app) {
         super(app);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 
@@ -82,7 +84,7 @@ public class ExitAction extends AbstractApplicationAction {
                 app.setEnabled(true);
                 return;
             }
-            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
             switch (unsavedViewsCount) {
                 case 0:
                     doExit();
@@ -197,7 +199,7 @@ public class ExitAction extends AbstractApplicationAction {
 
     protected void reviewChanges() {
         if (unsavedView.isEnabled()) {
-            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
             oldFocusOwner = SwingUtilities.getWindowAncestor(unsavedView.getComponent()).getFocusOwner();
             unsavedView.setEnabled(false);
             URI unsavedURI = unsavedView.getURI();
@@ -294,7 +296,7 @@ public class ExitAction extends AbstractApplicationAction {
                     doExit();
                 } catch (InterruptedException | ExecutionException ex) {
                     Logger.getLogger(ExitAction.class.getName()).log(Level.SEVERE, null, ex);
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     JSheet.showMessageSheet(v.getComponent(),
                                             "<html>" + UIManager.getString("OptionPane.css")
                                             + "<b>" + labels.format("file.save.couldntSave.message", URIUtil.
@@ -329,7 +331,7 @@ public class ExitAction extends AbstractApplicationAction {
                     reviewNext();
                 } catch (InterruptedException | ExecutionException ex) {
                     Logger.getLogger(ExitAction.class.getName()).log(Level.SEVERE, null, ex);
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     JSheet.showMessageSheet(v.getComponent(),
                                             "<html>" + UIManager.getString("OptionPane.css")
                                             + "<b>" + labels.format("file.save.couldntSave.message", uri) + "</b><p>"

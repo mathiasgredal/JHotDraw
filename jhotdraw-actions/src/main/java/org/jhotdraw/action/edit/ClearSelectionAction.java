@@ -9,6 +9,7 @@ package org.jhotdraw.action.edit;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.text.*;
 import org.jhotdraw.api.gui.EditableComponent;
@@ -66,7 +67,7 @@ public class ClearSelectionAction extends AbstractSelectionAction {
      */
     public ClearSelectionAction(JComponent target) {
         super(target);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 

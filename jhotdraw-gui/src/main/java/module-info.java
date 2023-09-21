@@ -1,4 +1,4 @@
-module GUI {
+open module GUI {
     requires Actions;
     requires Core;
     requires API;

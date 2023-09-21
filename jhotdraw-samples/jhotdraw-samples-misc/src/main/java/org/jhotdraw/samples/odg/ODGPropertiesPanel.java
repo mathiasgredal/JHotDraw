@@ -8,6 +8,7 @@
 package org.jhotdraw.samples.odg;
 
 import java.awt.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.util.*;
 import org.jhotdraw.draw.DrawingEditor;
@@ -28,7 +29,7 @@ import org.jhotdraw.formatter.JavaNumberFormatter;
 public class ODGPropertiesPanel extends javax.swing.JPanel {
 
     private static final long serialVersionUID = 1L;
-    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.odg.Labels", LocaleUtil.getDefault()));
     private DrawingEditor editor;
     private JAttributeSlider opacitySlider;
     private FigureAttributeEditorHandler<Double> opacityFieldHandler;

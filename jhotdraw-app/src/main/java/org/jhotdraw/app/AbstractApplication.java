@@ -14,10 +14,7 @@ import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -376,7 +373,7 @@ public abstract class AbstractApplication extends AbstractBean implements Applic
     }
 
     protected void initLabels() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
     }
 
     /**

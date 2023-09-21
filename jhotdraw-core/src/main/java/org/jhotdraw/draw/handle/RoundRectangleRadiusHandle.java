@@ -12,6 +12,8 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
+import java.util.ResourceBundle;
+
 import org.jhotdraw.util.*;
 
 import org.jhotdraw.draw.event.CompositeFigureEdit;
@@ -103,7 +105,7 @@ public class RoundRectangleRadiusHandle extends AbstractHandle {
         Point2D.Double oldArc = view.viewToDrawing(originalArc);
         Point2D.Double newArc = view.viewToDrawing(viewArc);
         ResourceBundleUtil labels
-                = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         CompositeFigureEdit edit = new CompositeFigureEdit(owner, labels.getString("attribute.roundRectRadius"));
         fireUndoableEditHappened(edit);
         fireUndoableEditHappened(new PropertyChangeEdit(owner, RoundRectangleFigure.ARC_WIDTH_PROPERTY, oldArc.x, newArc.x));
@@ -144,7 +146,7 @@ public class RoundRectangleRadiusHandle extends AbstractHandle {
             owner.setArcHeight(newArc.y);
             owner.changed();
             ResourceBundleUtil labels
-                    = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                    = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             CompositeFigureEdit edit = new CompositeFigureEdit(owner, labels.getString("attribute.roundRectRadius"));
             fireUndoableEditHappened(edit);
             fireUndoableEditHappened(new PropertyChangeEdit(owner, RoundRectangleFigure.ARC_WIDTH_PROPERTY, oldArc.x, newArc.x));
@@ -155,7 +157,7 @@ public class RoundRectangleRadiusHandle extends AbstractHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        return ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").
+        return ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())).
                 getString("handle.roundRectangleRadius.toolTipText");
     }
 }

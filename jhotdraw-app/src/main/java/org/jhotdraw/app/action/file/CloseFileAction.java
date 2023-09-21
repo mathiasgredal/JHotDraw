@@ -12,6 +12,8 @@ import org.jhotdraw.api.app.View;
 import org.jhotdraw.app.action.AbstractSaveUnsavedChangesAction;
 import org.jhotdraw.util.*;
 
+import java.util.ResourceBundle;
+
 /**
  * Closes the active view after letting the user save unsaved changes.
  * {@code DefaultSDIApplication} automatically exits when the user
@@ -43,7 +45,7 @@ public class CloseFileAction extends AbstractSaveUnsavedChangesAction {
      */
     public CloseFileAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 

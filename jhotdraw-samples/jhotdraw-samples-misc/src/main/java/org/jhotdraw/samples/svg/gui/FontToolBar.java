@@ -51,7 +51,7 @@ public class FontToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public FontToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         setName(labels.getString("font.toolbar"));
         JFontChooser.loadAllFonts();
         setDisclosureStateCount(3);
@@ -121,7 +121,7 @@ public class FontToolBar extends AbstractToolBar {
                 p1.setOpaque(false);
                 p2.setOpaque(false);
                 p3.setOpaque(false);
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;
@@ -232,7 +232,7 @@ public class FontToolBar extends AbstractToolBar {
                 p1.setOpaque(false);
                 p2.setOpaque(false);
                 p3.setOpaque(false);
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 layout = new GridBagLayout();
                 p.setLayout(layout);
                 // Font face field and popup button

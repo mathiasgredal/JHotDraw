@@ -9,7 +9,10 @@ package org.jhotdraw.draw.action;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.util.ResourceBundle;
+
 import org.jhotdraw.util.Images;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -34,7 +37,7 @@ public class ColorIcon implements javax.swing.Icon {
     }
 
     public ColorIcon(Color color) {
-        this(color, (color == null) ? ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").getToolTipTextProperty("attribute.color.noColor") : color.getRed() + "," + color.getGreen() + "," + color.getBlue(), 14, 14);
+        this(color, (color == null) ? ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())).getToolTipTextProperty("attribute.color.noColor") : color.getRed() + "," + color.getGreen() + "," + color.getBlue(), 14, 14);
     }
 
     public ColorIcon(int rgb, String name) {

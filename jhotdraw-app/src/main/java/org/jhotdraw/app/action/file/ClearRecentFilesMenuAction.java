@@ -9,6 +9,8 @@ package org.jhotdraw.app.action.file;
 
 import java.awt.event.ActionEvent;
 import java.beans.*;
+import java.util.ResourceBundle;
+
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.action.AbstractApplicationAction;
 import org.jhotdraw.util.*;
@@ -37,7 +39,7 @@ public class ClearRecentFilesMenuAction extends AbstractApplicationAction {
      */
     public ClearRecentFilesMenuAction(Application app) {
         super(app);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
         updateEnabled();
     }

@@ -1,4 +1,4 @@
-module Actions {
+open module Actions {
     requires API;
     requires Datatransfer;
     requires Utils;

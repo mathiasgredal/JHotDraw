@@ -11,6 +11,8 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
+import java.util.ResourceBundle;
+
 import org.jhotdraw.util.*;
 
 import static org.jhotdraw.draw.AttributeKeys.*;
@@ -48,7 +50,7 @@ public abstract class AbstractRotateHandle extends AbstractHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         return labels.getString("handle.rotate.toolTipText");
     }
 

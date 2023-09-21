@@ -20,11 +20,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Map;
+import java.util.*;
 import javax.swing.AbstractAction;
 import javax.swing.AbstractButton;
 import javax.swing.Action;
@@ -105,10 +101,7 @@ import org.jhotdraw.geom.DoubleStroke;
 import org.jhotdraw.gui.JComponentPopup;
 import org.jhotdraw.gui.JFontChooser;
 import org.jhotdraw.gui.JPopupButton;
-import org.jhotdraw.util.ActionUtil;
-import org.jhotdraw.util.Images;
-import org.jhotdraw.util.Methods;
-import org.jhotdraw.util.ResourceBundleUtil;
+import org.jhotdraw.util.*;
 
 /**
  * ButtonFactory.
@@ -267,7 +260,7 @@ public class ButtonFactory {
         ColorSpace grayCS = ColorSpace.getInstance(ColorSpace.CS_GRAY);
         HSBColorSpace hsbCS = HSBColorSpace.getInstance();
         LinkedList<ColorIcon> m = new LinkedList<>();
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         m.add(new ColorIcon(new Color(0, true), labels.getToolTipTextProperty("attribute.color.noColor")));
         for (int b = 10; b >= 0; b--) {
             Color c = new Color(grayCS, new float[]{b / 10f}, 1f);
@@ -368,7 +361,7 @@ public class ButtonFactory {
     }
 
     public static JToggleButton addSelectionToolTo(JToolBar tb, final DrawingEditor editor, Tool selectionTool) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         JToggleButton t;
         Tool tool;
         HashMap<String, Object> attributes;
@@ -428,7 +421,7 @@ public class ButtonFactory {
     }
 
     public static AbstractButton createZoomButton(final DrawingEditor editor) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         final JPopupButton zoomPopupButton = new JPopupButton();
         labels.configureToolBarButton(zoomPopupButton, "view.zoomFactor");
         zoomPopupButton.setFocusable(false);
@@ -475,7 +468,7 @@ public class ButtonFactory {
     }
 
     public static AbstractButton createZoomButton(final DrawingView view, double[] factors) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         final JPopupButton zoomPopupButton = new JPopupButton();
         labels.configureToolBarButton(zoomPopupButton, "view.zoomFactor");
         zoomPopupButton.setFocusable(false);
@@ -529,7 +522,7 @@ public class ButtonFactory {
 
     public static void addColorButtonsTo(JToolBar bar, DrawingEditor editor,
             java.util.List<ColorIcon> colors, int columnCount) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         bar.add(createEditorColorButton(editor, STROKE_COLOR, colors, columnCount, "attribute.strokeColor", labels, new HashMap<>()));
         bar.add(createEditorColorButton(editor, FILL_COLOR, colors, columnCount, "attribute.fillColor", labels, new HashMap<>()));
         bar.add(createEditorColorButton(editor, TEXT_COLOR, colors, columnCount, "attribute.textColor", labels, new HashMap<>()));
@@ -1266,7 +1259,7 @@ public class ButtonFactory {
         return createStrokeWidthButton(
                 editor,
                 new double[]{0d, 0.5d, 1d, 2d, 3d, 5d, 9d, 13d},
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JPopupButton createStrokeWidthButton(DrawingEditor editor,
@@ -1281,7 +1274,7 @@ public class ButtonFactory {
             double[] widths) {
         return createStrokeWidthButton(
                 editor, new double[]{0.5d, 1d, 2d, 3d, 5d, 9d, 13d},
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JPopupButton createStrokeWidthButton(
@@ -1310,7 +1303,7 @@ public class ButtonFactory {
     }
 
     public static JPopupButton createStrokeDecorationButton(DrawingEditor editor) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         JPopupButton strokeDecorationPopupButton = new JPopupButton();
         labels.configureToolBarButton(strokeDecorationPopupButton, "attribute.strokeDecoration");
         strokeDecorationPopupButton.setFocusable(false);
@@ -1341,7 +1334,7 @@ public class ButtonFactory {
 
     public static JPopupButton createStrokeDashesButton(DrawingEditor editor) {
         return createStrokeDashesButton(editor,
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JPopupButton createStrokeDashesButton(DrawingEditor editor,
@@ -1360,7 +1353,7 @@ public class ButtonFactory {
     public static JPopupButton createStrokeDashesButton(DrawingEditor editor,
             double[][] dashes) {
         return createStrokeDashesButton(editor, dashes,
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JPopupButton createStrokeDashesButton(DrawingEditor editor,
@@ -1398,7 +1391,7 @@ public class ButtonFactory {
     }
 
     public static JPopupButton createStrokeTypeButton(DrawingEditor editor) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         JPopupButton strokeTypePopupButton = new JPopupButton();
         labels.configureToolBarButton(strokeTypePopupButton, "attribute.strokeType");
         strokeTypePopupButton.setFocusable(false);
@@ -1440,7 +1433,7 @@ public class ButtonFactory {
     }
 
     public static JPopupButton createStrokePlacementButton(DrawingEditor editor) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         JPopupButton strokePlacementPopupButton = new JPopupButton();
         labels.configureToolBarButton(strokePlacementPopupButton, "attribute.strokePlacement");
         strokePlacementPopupButton.setFocusable(false);
@@ -1538,7 +1531,7 @@ public class ButtonFactory {
 
     public static JPopupButton createFontButton(DrawingEditor editor) {
         return createFontButton(editor,
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JPopupButton createFontButton(DrawingEditor editor,
@@ -1570,7 +1563,7 @@ public class ButtonFactory {
 
     public static JButton createFontStyleBoldButton(DrawingEditor editor) {
         return createFontStyleBoldButton(editor,
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JButton createFontStyleBoldButton(DrawingEditor editor,
@@ -1595,7 +1588,7 @@ public class ButtonFactory {
 
     public static JButton createFontStyleItalicButton(DrawingEditor editor) {
         return createFontStyleItalicButton(editor,
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JButton createFontStyleItalicButton(DrawingEditor editor,
@@ -1620,7 +1613,7 @@ public class ButtonFactory {
 
     public static JButton createFontStyleUnderlineButton(DrawingEditor editor) {
         return createFontStyleUnderlineButton(editor,
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JButton createFontStyleUnderlineButton(DrawingEditor editor,
@@ -1688,7 +1681,7 @@ public class ButtonFactory {
      * DrawingView.
      */
     public static AbstractButton createToggleGridButton(final DrawingView view) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         final JToggleButton toggleButton;
         toggleButton = new JToggleButton();
         labels.configureToolBarButton(toggleButton, "view.toggleGrid");
@@ -1714,7 +1707,7 @@ public class ButtonFactory {
 
     public static JPopupButton createStrokeCapButton(DrawingEditor editor) {
         return createStrokeCapButton(editor,
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JPopupButton createStrokeCapButton(DrawingEditor editor,
@@ -1762,7 +1755,7 @@ public class ButtonFactory {
 
     public static JPopupButton createStrokeJoinButton(DrawingEditor editor) {
         return createStrokeJoinButton(editor,
-                ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels"));
+                ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())));
     }
 
     public static JPopupButton createStrokeJoinButton(DrawingEditor editor,

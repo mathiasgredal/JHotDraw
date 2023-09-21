@@ -9,7 +9,10 @@ package org.jhotdraw.samples.svg;
 
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
+import java.util.ResourceBundle;
+
 import org.jhotdraw.draw.*;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -20,7 +23,7 @@ import org.jhotdraw.util.ResourceBundleUtil;
  */
 public class SVGAttributeKeys extends AttributeKeys {
 
-    private static final ResourceBundleUtil LABELS = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+    private static final ResourceBundleUtil LABELS = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
 
     public enum TextAnchor {
         START, MIDDLE, END

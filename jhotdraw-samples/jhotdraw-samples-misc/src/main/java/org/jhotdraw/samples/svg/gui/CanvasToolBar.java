@@ -14,6 +14,7 @@ import org.jhotdraw.gui.plaf.palette.PaletteLabelUI;
 import org.jhotdraw.gui.plaf.palette.PaletteSliderUI;
 import org.jhotdraw.gui.plaf.palette.PaletteColorChooserUI;
 import java.awt.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.plaf.LabelUI;
@@ -48,7 +49,7 @@ public class CanvasToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public CanvasToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         setName(labels.getString(getID() + ".toolbar"));
         setDisclosureStateCount(3);
     }
@@ -65,7 +66,7 @@ public class CanvasToolBar extends AbstractToolBar {
                 if (editor == null) {
                     break;
                 }
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;
@@ -180,7 +181,7 @@ public class CanvasToolBar extends AbstractToolBar {
                 p3.setOpaque(false);
                 p.removeAll();
                 p.setBorder(new EmptyBorder(5, 5, 5, 8));
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 layout = new GridBagLayout();
                 p.setLayout(layout);
                 // Fill color field with button

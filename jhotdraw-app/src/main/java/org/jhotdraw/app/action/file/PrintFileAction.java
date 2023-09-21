@@ -21,6 +21,7 @@ import java.awt.print.Pageable;
 import java.awt.print.Paper;
 import java.awt.print.PrinterException;
 import java.awt.print.PrinterJob;
+import java.util.ResourceBundle;
 import javax.print.attribute.HashPrintRequestAttributeSet;
 import javax.print.attribute.PrintRequestAttributeSet;
 import javax.print.attribute.standard.PrinterResolution;
@@ -33,6 +34,7 @@ import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.app.PrintableView;
 import org.jhotdraw.gui.JSheet;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -75,7 +77,7 @@ public class PrintFileAction extends AbstractViewAction {
      */
     public PrintFileAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 
@@ -111,7 +113,7 @@ public class PrintFileAction extends AbstractViewAction {
                 } catch (PrinterException e) {
                     String message = (e.getMessage() == null) ? e.toString() : e.getMessage();
                     View view = getActiveView();
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     JSheet.showMessageSheet(view.getComponent(),
                             "<html>" + UIManager.getString("OptionPane.css")
                             + "<b>" + labels.getString("couldntPrint") + "</b><br>"
@@ -142,7 +144,7 @@ public class PrintFileAction extends AbstractViewAction {
                 try {
                     job.print();
                 } catch (PrinterException e) {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     JSheet.showMessageSheet(getActiveView().getComponent(),
                             labels.getFormatted("couldntPrint", e));
                 }

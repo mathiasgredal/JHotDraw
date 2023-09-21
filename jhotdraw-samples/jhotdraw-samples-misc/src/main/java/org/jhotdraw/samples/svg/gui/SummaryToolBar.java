@@ -8,6 +8,7 @@
 package org.jhotdraw.samples.svg.gui;
 
 import java.awt.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.util.*;
 
@@ -26,7 +27,7 @@ public class SummaryToolBar extends JToolBar {
      * Creates new instance.
      */
     public SummaryToolBar() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         initComponents();
         GridBagLayout layout = new GridBagLayout();
         setLayout(layout);

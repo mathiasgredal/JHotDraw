@@ -12,6 +12,7 @@ import java.util.*;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.event.TransformEdit;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.ResourceBundleUtil;
 
@@ -27,7 +28,7 @@ public abstract class AlignAction extends AbstractSelectedAction {
 
     private static final long serialVersionUID = 1L;
     protected ResourceBundleUtil labels
-            = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
 
     /**
      * Creates a new instance.
