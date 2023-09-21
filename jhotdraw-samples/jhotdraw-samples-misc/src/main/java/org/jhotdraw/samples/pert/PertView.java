@@ -12,6 +12,7 @@ import java.awt.*;
 import java.awt.print.Pageable;
 import java.beans.*;
 import java.io.*;
+import org.jhotdraw.util.*;
 import java.lang.reflect.*;
 import java.net.URI;
 import java.util.*;
@@ -33,8 +34,7 @@ import org.jhotdraw.draw.io.OutputFormat;
 import org.jhotdraw.draw.print.DrawingPageable;
 import org.jhotdraw.gui.PlacardScrollPaneLayout;
 import org.jhotdraw.gui.action.ButtonFactory;
-import org.jhotdraw.undo.UndoRedoManager;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.UndoRedoManager;
 
 /**
  * Provides a view on a Pert drawing.
@@ -77,7 +77,7 @@ public class PertView extends AbstractView {
                 setHasUnsavedChanges(undo.hasSignificantEdits());
             }
         });
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         JPanel placardPanel = new JPanel(new BorderLayout());
         javax.swing.AbstractButton pButton;
         pButton = ButtonFactory.createZoomButton(view);

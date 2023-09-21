@@ -11,6 +11,7 @@ import java.awt.Frame;
 import java.awt.event.*;
 import java.io.*;
 import java.net.URI;
+import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -141,7 +142,7 @@ public class OpenApplicationFileAction extends AbstractApplicationAction {
                 if (exists) {
                     view.read(uri, null);
                 } else {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     throw new IOException(labels.
                             getFormatted("file.open.fileDoesNotExist.message", URIUtil.getName(uri)));
                 }
@@ -165,7 +166,7 @@ public class OpenApplicationFileAction extends AbstractApplicationAction {
                     Logger.getLogger(OpenApplicationFileAction.class.getName()).log(Level.SEVERE, null, ex);
                     ex.printStackTrace();
                     String message = ex.getMessage() != null ? ex.getMessage() : ex.toString();
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     JSheet.showMessageSheet(view.getComponent(),
                                             "<html>" + UIManager.getString("OptionPane.css")
                                             + "<b>" + labels.getFormatted("file.open.couldntOpen.message", URIUtil.

@@ -9,12 +9,14 @@ package org.jhotdraw.gui.action;
 
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 import javax.swing.JDialog;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.GridConstrainer;
 import org.jhotdraw.draw.action.AbstractDrawingViewAction;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 import org.jhotdraw.util.prefs.PreferencesUtil;
 
@@ -42,7 +44,7 @@ public class EditGridAction extends AbstractDrawingViewAction {
     public EditGridAction(Application app, DrawingEditor editor) {
         super(editor);
         this.app = app;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 
@@ -64,7 +66,7 @@ public class EditGridAction extends AbstractDrawingViewAction {
 
     protected JDialog getDialog() {
         if (dialog == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             dialog = new JDialog();
             dialog.setTitle(labels.getString("editGrid"));
             dialog.setResizable(false);

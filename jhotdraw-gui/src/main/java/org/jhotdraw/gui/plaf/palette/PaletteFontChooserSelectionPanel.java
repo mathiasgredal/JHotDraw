@@ -8,7 +8,10 @@
 package org.jhotdraw.gui.plaf.palette;
 
 import java.awt.Color;
+import java.util.ResourceBundle;
 import javax.swing.*;
+
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -26,7 +29,7 @@ public class PaletteFontChooserSelectionPanel extends javax.swing.JPanel {
      * Creates new form FontChooserPanel
      */
     public PaletteFontChooserSelectionPanel() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.gui.Labels", LocaleUtil.getDefault()));
         initComponents();
         collectionList.setModel(new DefaultListModel());
         familyList.setModel(new DefaultListModel());

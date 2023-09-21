@@ -36,7 +36,7 @@ import org.jhotdraw.samples.svg.figures.SVGPathFigure;
 import org.jhotdraw.samples.svg.figures.SVGRectFigure;
 import org.jhotdraw.samples.svg.figures.SVGTextAreaFigure;
 import org.jhotdraw.samples.svg.figures.SVGTextFigure;
-import org.jhotdraw.undo.UndoRedoManager;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
 
 /**
@@ -57,7 +57,7 @@ public class ODGDrawingPanel extends JPanel {
      * Creates new instance.
      */
     public ODGDrawingPanel() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         initComponents();
         undoManager = new UndoRedoManager();
         editor = new DefaultDrawingEditor();
@@ -155,7 +155,7 @@ public class ODGDrawingPanel extends JPanel {
     private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         ButtonFactory.addSelectionToolTo(tb, editor,
                 ButtonFactory.createDrawingActions(editor),
                 createSelectionActions(editor));

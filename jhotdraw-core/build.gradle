@@ -8,4 +8,5 @@ dependencies {
     implementation project(':jhotdraw-datatransfer')
     implementation project(':jhotdraw-utils')
     implementation project(':jhotdraw-xml')
+    implementation "dk.sdu.mmmi.featuretracer:featuretracer:1.0"
 }

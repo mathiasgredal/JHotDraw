@@ -43,7 +43,7 @@ import org.jhotdraw.draw.tool.TextAreaCreationTool;
 import org.jhotdraw.draw.tool.TextCreationTool;
 import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.gui.action.ButtonFactory;
-import org.jhotdraw.undo.UndoRedoManager;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
 
 /**
@@ -64,7 +64,7 @@ public class DrawingPanel extends JPanel {
      * Creates new instance.
      */
     public DrawingPanel() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         initComponents();
         undoManager = new UndoRedoManager();
         editor = new DefaultDrawingEditor();
@@ -188,7 +188,7 @@ public class DrawingPanel extends JPanel {
 
     public void addDefaultCreationButtonsTo(JToolBar tb, final DrawingEditor editor,
             Collection<Action> drawingActions, Collection<Action> selectionActions) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         ButtonFactory.addSelectionToolTo(tb, editor, drawingActions, selectionActions);
         tb.addSeparator();
         AbstractAttributedFigure af;

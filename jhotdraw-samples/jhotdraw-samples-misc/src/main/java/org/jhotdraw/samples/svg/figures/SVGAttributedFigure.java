@@ -12,6 +12,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
 import java.awt.image.*;
+import org.jhotdraw.util.*;
 import java.util.*;
 import javax.swing.*;
 import org.jhotdraw.draw.*;
@@ -19,7 +20,6 @@ import static org.jhotdraw.draw.AttributeKeys.STROKE_WIDTH;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.samples.svg.SVGAttributeKeys;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
-import org.jhotdraw.util.*;
 
 /**
  * SVGAttributedFigure.
@@ -109,7 +109,7 @@ public abstract class SVGAttributedFigure extends AbstractAttributedFigure {
     public Collection<Action> getActions(Point2D.Double p) {
         LinkedList<Action> actions = new LinkedList<Action>();
         if (get(TRANSFORM) != null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
             actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")) {
                 private static final long serialVersionUID = 1L;
 

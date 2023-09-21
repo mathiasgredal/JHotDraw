@@ -14,9 +14,11 @@ import java.awt.Dimension;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 import javax.swing.DefaultBoundedRangeModel;
 import org.jhotdraw.gui.event.ActivityManagerEvent;
 import org.jhotdraw.gui.event.ActivityManagerListener;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -77,7 +79,7 @@ public class JActivityIndicator extends javax.swing.JPanel {
      * Creates new form JActivityIndicator
      */
     public JActivityIndicator() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.gui.Labels", LocaleUtil.getDefault()));
         initComponents();
         setActivityManager(ActivityManager.getInstance());
     }

@@ -9,10 +9,13 @@ package org.jhotdraw.draw.action;
 
 import java.awt.geom.*;
 import java.util.HashSet;
+import java.util.ResourceBundle;
+
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.event.TransformEdit;
-import org.jhotdraw.undo.CompositeEdit;
+import org.jhotdraw.util.LocaleUtil;
+import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -60,7 +63,7 @@ public abstract class MoveAction extends AbstractSelectedAction {
 
         public East(DrawingEditor editor) {
             super(editor, 1, 0);
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             labels.configureAction(this, ID);
         }
     }
@@ -72,7 +75,7 @@ public abstract class MoveAction extends AbstractSelectedAction {
 
         public West(DrawingEditor editor) {
             super(editor, -1, 0);
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             labels.configureAction(this, ID);
         }
     }
@@ -84,7 +87,7 @@ public abstract class MoveAction extends AbstractSelectedAction {
 
         public North(DrawingEditor editor) {
             super(editor, 0, -1);
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             labels.configureAction(this, ID);
         }
     }
@@ -96,7 +99,7 @@ public abstract class MoveAction extends AbstractSelectedAction {
 
         public South(DrawingEditor editor) {
             super(editor, 0, 1);
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             labels.configureAction(this, ID);
         }
     }

@@ -36,6 +36,7 @@ import org.jhotdraw.draw.event.CompositeFigureEvent;
 import org.jhotdraw.draw.event.CompositeFigureListener;
 import org.jhotdraw.draw.io.InputFormat;
 import org.jhotdraw.draw.io.OutputFormat;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 import org.jhotdraw.util.ReversedList;
 
@@ -113,8 +114,7 @@ SearchLoop:             for (InputFormat format : drawing.getInputFormats()) {
 
                                             @Override
                                             public String getPresentationName() {
-                                                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(
-                                                        "org.jhotdraw.draw.Labels");
+                                                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                                                 return labels.getString("edit.paste.text");
                                             }
 
@@ -159,8 +159,7 @@ SearchLoop:             for (DataFlavor flavor : transferFlavors) {
 
                                             @Override
                                             public String getPresentationName() {
-                                                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(
-                                                        "org.jhotdraw.draw.Labels");
+                                                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels",LocaleUtil.getDefault()));
                                                 return labels.getString("edit.paste.text");
                                             }
 
@@ -223,8 +222,7 @@ FileFormatLoop:                     for (InputFormat format : drawing.getInputFo
 
                                             @Override
                                             public String getPresentationName() {
-                                                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(
-                                                        "org.jhotdraw.draw.Labels");
+                                                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels",LocaleUtil.getDefault()));
                                                 return labels.getString("edit.paste.text");
                                             }
 
@@ -394,7 +392,7 @@ FileFormatLoop:                     for (InputFormat format : drawing.getInputFo
 
                     @Override
                     public String getPresentationName() {
-                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                         return labels.getString("edit.delete.text");
                     }
 

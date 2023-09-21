@@ -12,6 +12,7 @@ import java.util.*;
 import javax.swing.*;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.event.FigureSelectionEvent;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -72,7 +73,7 @@ public class EditorColorChooserAction extends AttributeAction {
         Color initialColor = getInitialColor();
         // FIXME - Reuse colorChooser object instead of calling static method here.
         ResourceBundleUtil labels
-                = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         Color chosenColor = JColorChooser.showDialog((Component) e.getSource(), labels.getString("attribute.color.text"), initialColor);
         if (chosenColor != null) {
             HashMap<AttributeKey<?>, Object> attr = new HashMap<>(attributes);

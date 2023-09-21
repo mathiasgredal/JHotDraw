@@ -11,6 +11,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.beans.*;
 import java.net.URI;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.net.URIUtil;
@@ -34,7 +35,7 @@ public class FocusWindowAction extends AbstractAction {
      */
     public FocusWindowAction(View view) {
         this.view = view;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
         //setEnabled(false);
         setEnabled(view != null);
@@ -76,7 +77,7 @@ public class FocusWindowAction extends AbstractAction {
     }
 
     private String getTitle() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
         String title = labels.getString("unnamedFile");
         if (view != null) {
             URI uri = view.getURI();

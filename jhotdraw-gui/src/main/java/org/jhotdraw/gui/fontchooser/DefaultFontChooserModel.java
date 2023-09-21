@@ -10,6 +10,8 @@ package org.jhotdraw.gui.fontchooser;
 import java.awt.*;
 import java.util.*;
 import javax.swing.tree.*;
+
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -58,7 +60,7 @@ public class DefaultFontChooserModel extends AbstractFontChooserModel {
      */
     @SuppressWarnings("unchecked")
     public void setFonts(Font[] fonts) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.gui.Labels", LocaleUtil.getDefault()));
         // collect families and sort them alphabetically
         ArrayList<FontFamilyNode> families = new ArrayList<>();
         HashMap<String, FontFamilyNode> familyMap = new HashMap<>();

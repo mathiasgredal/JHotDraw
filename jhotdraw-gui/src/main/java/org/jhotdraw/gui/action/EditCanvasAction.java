@@ -9,11 +9,13 @@ package org.jhotdraw.gui.action;
 
 import java.awt.event.ActionEvent;
 import java.beans.PropertyChangeListener;
+import java.util.ResourceBundle;
 import java.util.prefs.Preferences;
 import javax.swing.JFrame;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.action.AbstractDrawingViewAction;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 import org.jhotdraw.util.prefs.PreferencesUtil;
 
@@ -41,7 +43,7 @@ public class EditCanvasAction extends AbstractDrawingViewAction {
     public EditCanvasAction(Application app, DrawingEditor editor) {
         super(editor);
         this.app = app;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 
@@ -63,7 +65,7 @@ public class EditCanvasAction extends AbstractDrawingViewAction {
 
     protected JFrame getFrame() {
         if (frame == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             frame = new JFrame();
             frame.setTitle(labels.getString("window.editCanvas.title"));
             frame.setResizable(false);

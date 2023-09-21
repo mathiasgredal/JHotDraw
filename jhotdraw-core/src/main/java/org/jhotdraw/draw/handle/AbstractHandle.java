@@ -28,7 +28,7 @@ import org.jhotdraw.draw.event.HandleListener;
  */
 public abstract class AbstractHandle implements Handle, FigureListener {
 
-    final private Figure owner;
+    private Figure owner;
     protected DrawingView view;
     /**
      * Holds the tool tip text. By default a handle has no tool tip text.

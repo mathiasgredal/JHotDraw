@@ -11,6 +11,7 @@ import org.jhotdraw.draw.figure.Figure;
 import java.util.*;
 import javax.swing.undo.*;
 import org.jhotdraw.draw.*;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -30,7 +31,7 @@ public class BringToFrontAction extends AbstractSelectedAction {
     public BringToFrontAction(DrawingEditor editor) {
         super(editor);
         ResourceBundleUtil labels
-                = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
         updateEnabledState();
     }
@@ -46,7 +47,7 @@ public class BringToFrontAction extends AbstractSelectedAction {
             @Override
             public String getPresentationName() {
                 ResourceBundleUtil labels
-                        = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                        = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                 return labels.getTextProperty(ID);
             }
 

@@ -8,11 +8,10 @@
 package org.jhotdraw.action.window;
 
 import java.awt.event.ActionEvent;
+import java.util.ResourceBundle;
 import javax.swing.AbstractAction;
 import org.jhotdraw.api.gui.Arrangeable;
-import static org.jhotdraw.api.gui.Arrangeable.Arrangement.CASCADE;
-import static org.jhotdraw.api.gui.Arrangeable.Arrangement.HORIZONTAL;
-import static org.jhotdraw.api.gui.Arrangeable.Arrangement.VERTICAL;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -42,7 +41,7 @@ public class ArrangeWindowsAction extends AbstractAction {
     public ArrangeWindowsAction(Arrangeable arrangeable, Arrangeable.Arrangement arrangement) {
         this.arrangeable = arrangeable;
         this.arrangement = arrangement;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
         String labelID;
         switch (arrangement) {
             case VERTICAL:

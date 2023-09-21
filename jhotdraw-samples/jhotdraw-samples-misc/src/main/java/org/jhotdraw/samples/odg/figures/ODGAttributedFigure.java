@@ -9,6 +9,7 @@ package org.jhotdraw.samples.odg.figures;
 
 import org.jhotdraw.draw.figure.AbstractAttributedFigure;
 import java.awt.*;
+import org.jhotdraw.util.*;
 import java.awt.event.*;
 import java.awt.geom.*;
 import java.awt.image.*;
@@ -19,7 +20,6 @@ import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.samples.odg.ODGAttributeKeys;
 import static org.jhotdraw.samples.odg.ODGAttributeKeys.*;
 import org.jhotdraw.samples.odg.ODGConstants;
-import org.jhotdraw.util.*;
 
 /**
  * ODGAttributedFigure.
@@ -113,7 +113,7 @@ public abstract class ODGAttributedFigure extends AbstractAttributedFigure imple
     public Collection<Action> getActions(Point2D.Double p) {
         LinkedList<Action> actions = new LinkedList<Action>();
         if (get(TRANSFORM) != null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.odg.Labels", LocaleUtil.getDefault()));
             actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")) {
                 private static final long serialVersionUID = 1L;
 

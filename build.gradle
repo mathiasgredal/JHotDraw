@@ -1,5 +1,10 @@
+plugins {
+    id 'org.javamodularity.moduleplugin' version '1.8.12' apply false
+}
+
 allprojects {
     apply plugin: 'java'
+    apply plugin: "org.javamodularity.moduleplugin"
 
     version = "1.0"
 
@@ -9,12 +14,23 @@ allprojects {
     }
 
     repositories {
+        ivy {
+            url 'https://github.com/sweat-tek/MavenRepository/raw/master/'
+            patternLayout {
+                m2compatible = true
+                artifact '[organisation]/[revision]/[module]-[revision].jar'
+            }
+            metadataSources { artifact() }
+        }
         mavenCentral()
     }
 
     dependencies {
         testImplementation(platform("org.junit:junit-bom:$junitVersion"))
         testImplementation("org.junit.jupiter:junit-jupiter")
+
+        implementation "org.aspectj:aspectjweaver:1.9.20"
+        implementation "dk.sdu.mmmi.featuretracer:featuretracer:1.0"
     }
 
     test {

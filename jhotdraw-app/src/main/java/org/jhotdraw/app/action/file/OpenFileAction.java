@@ -18,6 +18,7 @@ import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
 import java.net.URI;
+import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -35,6 +36,7 @@ import org.jhotdraw.api.app.View;
 import org.jhotdraw.api.gui.URIChooser;
 import org.jhotdraw.gui.JSheet;
 import org.jhotdraw.net.URIUtil;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 import org.jhotdraw.util.prefs.PreferencesUtil;
 
@@ -84,7 +86,7 @@ public class OpenFileAction extends AbstractApplicationAction {
      */
     public OpenFileAction(Application app) {
         super(app);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 
@@ -171,7 +173,7 @@ public class OpenFileAction extends AbstractApplicationAction {
                 if (exists) {
                     view.read(uri, chooser);
                 } else {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     throw new IOException(labels.getFormatted("file.open.fileDoesNotExist.message", URIUtil.getName(uri)));
                 }
                 return null;
@@ -203,7 +205,7 @@ public class OpenFileAction extends AbstractApplicationAction {
                 view.setEnabled(true);
                 app.setEnabled(true);
                 String message = value.getMessage() != null ? value.getMessage() : value.toString();
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                 JSheet.showMessageSheet(view.getComponent(),
                         "<html>" + UIManager.getString("OptionPane.css")
                         + "<b>" + labels.getFormatted("file.open.couldntOpen.message", URIUtil.getName(uri)) + "</b><p>"

@@ -9,6 +9,7 @@ package org.jhotdraw.action.edit;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.datatransfer.ClipboardUtil;
 import org.jhotdraw.util.*;
@@ -50,7 +51,7 @@ public class CopyAction extends AbstractSelectionAction {
      */
     public CopyAction(JComponent target) {
         super(target);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 

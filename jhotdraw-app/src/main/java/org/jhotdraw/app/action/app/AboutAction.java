@@ -10,6 +10,7 @@ package org.jhotdraw.app.action.app;
 import org.jhotdraw.api.app.Application;
 import java.awt.Component;
 import java.awt.event.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.action.AbstractApplicationAction;
 import org.jhotdraw.util.*;
@@ -39,7 +40,7 @@ public class AboutAction extends AbstractApplicationAction {
      */
     public AboutAction(Application app) {
         super(app);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 

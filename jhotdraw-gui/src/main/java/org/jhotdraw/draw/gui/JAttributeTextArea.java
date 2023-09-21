@@ -8,9 +8,9 @@
 package org.jhotdraw.draw.gui;
 
 import java.awt.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.api.gui.AttributeEditor;
-import static org.jhotdraw.api.gui.AttributeEditor.ATTRIBUTE_VALUE_PROPERTY;
 import org.jhotdraw.gui.JLifeFormattedTextArea;
 import org.jhotdraw.util.*;
 
@@ -38,7 +38,7 @@ public class JAttributeTextArea<T> extends JLifeFormattedTextArea implements Att
     @Override
     protected void paintComponent(Graphics g) {
         if (!isFocusOwner() && isMultipleValues) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.gui.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.gui.Labels", LocaleUtil.getDefault()));
             Color c = getForeground();
             setForeground(new Color(0x0, true));
             super.paintComponent(g);

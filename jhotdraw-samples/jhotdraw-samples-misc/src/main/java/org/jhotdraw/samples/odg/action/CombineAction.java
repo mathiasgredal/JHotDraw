@@ -10,10 +10,10 @@ package org.jhotdraw.samples.odg.action;
 import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.figure.CompositeFigure;
 import java.util.*;
+import org.jhotdraw.util.*;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.action.*;
 import org.jhotdraw.samples.odg.figures.ODGPathFigure;
-import org.jhotdraw.util.*;
 
 /**
  * CombinePathsAction.
@@ -26,7 +26,7 @@ public class CombineAction extends GroupAction {
     private static final long serialVersionUID = 1L;
     public static final String ID = "edit.combinePaths";
     private ResourceBundleUtil labels
-            = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+            = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.odg.Labels", LocaleUtil.getDefault()));
 
     /**
      * Creates a new instance.

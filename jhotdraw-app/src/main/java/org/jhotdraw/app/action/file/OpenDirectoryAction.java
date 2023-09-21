@@ -10,7 +10,10 @@ package org.jhotdraw.app.action.file;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.api.gui.URIChooser;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
+
+import java.util.ResourceBundle;
 
 /**
  * Presents an {@code URIChooser} for selecting a directory and loads the
@@ -42,7 +45,7 @@ public class OpenDirectoryAction extends OpenFileAction {
      */
     public OpenDirectoryAction(Application app) {
         super(app);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 

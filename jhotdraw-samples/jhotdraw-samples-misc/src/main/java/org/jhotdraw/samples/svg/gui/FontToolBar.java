@@ -22,7 +22,6 @@ import org.jhotdraw.draw.figure.CompositeFigure;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.figure.TextHolderFigure;
-import org.jhotdraw.draw.action.*;
 import org.jhotdraw.draw.event.FigureAttributeEditorHandler;
 import org.jhotdraw.draw.event.SelectionComponentDisplayer;
 import org.jhotdraw.draw.event.SelectionComponentRepainter;
@@ -35,6 +34,7 @@ import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.formatter.FontFormatter;
 import org.jhotdraw.formatter.JavaNumberFormatter;
 import org.jhotdraw.util.*;
+
 
 /**
  * StrokeToolBar.
@@ -51,7 +51,7 @@ public class FontToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public FontToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         setName(labels.getString("font.toolbar"));
         JFontChooser.loadAllFonts();
         setDisclosureStateCount(3);
@@ -121,7 +121,7 @@ public class FontToolBar extends AbstractToolBar {
                 p1.setOpaque(false);
                 p2.setOpaque(false);
                 p3.setOpaque(false);
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;
@@ -232,7 +232,7 @@ public class FontToolBar extends AbstractToolBar {
                 p1.setOpaque(false);
                 p2.setOpaque(false);
                 p3.setOpaque(false);
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 layout = new GridBagLayout();
                 p.setLayout(layout);
                 // Font face field and popup button

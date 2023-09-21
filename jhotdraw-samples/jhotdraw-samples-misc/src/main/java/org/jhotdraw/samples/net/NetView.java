@@ -14,6 +14,7 @@ import java.beans.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.net.URI;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.*;
 import org.jhotdraw.action.edit.RedoAction;
@@ -34,7 +35,7 @@ import org.jhotdraw.draw.print.DrawingPageable;
 import org.jhotdraw.gui.PlacardScrollPaneLayout;
 import org.jhotdraw.gui.action.ButtonFactory;
 import org.jhotdraw.samples.net.figures.NodeFigure;
-import org.jhotdraw.undo.UndoRedoManager;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
 
 /**
@@ -79,7 +80,7 @@ public class NetView extends AbstractView {
                 setHasUnsavedChanges(undo.hasSignificantEdits());
             }
         });
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         JPanel placardPanel = new JPanel(new BorderLayout());
         javax.swing.AbstractButton pButton;
         pButton = ButtonFactory.createZoomButton(view);

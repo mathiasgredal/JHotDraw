@@ -10,6 +10,7 @@ package org.jhotdraw.app.action.file;
 import java.awt.Component;
 import java.awt.Window;
 import java.net.URI;
+import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +27,7 @@ import org.jhotdraw.gui.JSheet;
 import org.jhotdraw.gui.event.SheetEvent;
 import org.jhotdraw.gui.event.SheetListener;
 import org.jhotdraw.net.URIUtil;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -77,7 +79,7 @@ public class LoadFileAction extends AbstractSaveUnsavedChangesAction {
      */
     public LoadFileAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 
@@ -146,7 +148,7 @@ public class LoadFileAction extends AbstractSaveUnsavedChangesAction {
 
             protected void failed(Throwable value) {
                 value.printStackTrace();
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                 JSheet.showMessageSheet(view.getComponent(),
                         "<html>" + UIManager.getString("OptionPane.css")
                         + "<b>" + labels.getFormatted("file.load.couldntLoad.message", URIUtil.getName(uri)) + "</b><p>"

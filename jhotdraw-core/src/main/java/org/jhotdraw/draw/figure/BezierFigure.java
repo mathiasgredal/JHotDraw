@@ -27,9 +27,9 @@ import org.jhotdraw.draw.handle.TransformHandleKit;
 import org.jhotdraw.geom.BezierPath;
 import org.jhotdraw.geom.Geom;
 import org.jhotdraw.geom.GrowStroke;
-import org.jhotdraw.util.*;
 import org.jhotdraw.xml.DOMInput;
 import org.jhotdraw.xml.DOMOutput;
+import org.jhotdraw.util.*;
 
 /**
  * A {@link Figure} which draws an opened or a closed bezier path.
@@ -644,7 +644,7 @@ public class BezierFigure extends AbstractAttributedFigure {
 
                     @Override
                     public String getPresentationName() {
-                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                         return labels.getString("edit.bezierPath.splitSegment.text");
                     }
 

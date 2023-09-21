@@ -11,6 +11,7 @@ import java.awt.Component;
 import java.awt.Window;
 import java.awt.event.ActionEvent;
 import java.net.URI;
+import java.util.ResourceBundle;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,6 +28,7 @@ import org.jhotdraw.gui.JSheet;
 import org.jhotdraw.gui.event.SheetEvent;
 import org.jhotdraw.gui.event.SheetListener;
 import org.jhotdraw.net.URIUtil;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -72,7 +74,7 @@ public abstract class AbstractSaveUnsavedChangesAction extends AbstractViewActio
         }
         final View v = av;
         if (v.isEnabled()) {
-            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+            final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
             Window wAncestor = SwingUtilities.getWindowAncestor(v.getComponent());
             oldFocusOwner = (wAncestor == null) ? null : wAncestor.getFocusOwner();
             v.setEnabled(false);
@@ -167,7 +169,7 @@ public abstract class AbstractSaveUnsavedChangesAction extends AbstractViewActio
                 } catch (InterruptedException | ExecutionException ex) {
                     Logger.getLogger(AbstractSaveUnsavedChangesAction.class.getName()).log(Level.SEVERE, null, ex);
                     String message = (ex.getMessage() != null) ? ex.getMessage() : ex.toString();
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                     JSheet.showMessageSheet(getActiveView().getComponent(),
                                             "<html>" + UIManager.getString("OptionPane.css")
                                             + "<b>" + labels.getFormatted("file.save.couldntSave.message", URIUtil.

@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.draw.tool;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.figure.BezierFigure;
 import java.awt.*;
@@ -57,7 +58,7 @@ public class BezierTool extends AbstractTool {
      * Holds the view on which we are currently creating a figure.
      */
     private DrawingView creationView;
-    private final boolean calculateFittedCurveAfterCreation;
+    private boolean calculateFittedCurveAfterCreation;
 
     /**
      * Creates a new instance.
@@ -85,7 +86,7 @@ public class BezierTool extends AbstractTool {
         this.prototype = prototype;
         this.attributes = attributes;
         if (name == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             name = labels.getString("edit.createFigure.text");
         }
         this.presentationName = name;
@@ -97,6 +98,7 @@ public class BezierTool extends AbstractTool {
     }
 
     @Override
+    @FeatureEntryPoint(value = "Bezier")
     public void activate(DrawingEditor editor) {
         super.activate(editor);
         getView().setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));

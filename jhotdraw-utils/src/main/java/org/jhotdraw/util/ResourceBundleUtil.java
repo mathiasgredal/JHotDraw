@@ -7,12 +7,15 @@
  */
 package org.jhotdraw.util;
 
+import java.awt.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
+import java.lang.reflect.InvocationTargetException;
 import java.net.*;
 import java.text.*;
 import java.util.*;
+import javax.imageio.ImageIO;
 import javax.swing.*;
 
 /**
@@ -106,10 +109,11 @@ public class ResourceBundleUtil implements Serializable {
      * Creates a new ResouceBundleUtil which wraps
      * the provided resource bundle.
      */
-    public ResourceBundleUtil(String baseName, Locale locale) {
-        this.locale = locale;
-        this.baseName = baseName;
-        this.resource = ResourceBundle.getBundle(baseName, locale);
+    public ResourceBundleUtil(ResourceBundle bundle) {
+        this.locale = bundle.getLocale();
+        this.baseName = bundle.getBaseBundleName();
+        this.resource = bundle;
+        this.baseClass = bundle.getClass();
     }
 
     /**
@@ -307,18 +311,37 @@ public class ResourceBundleUtil implements Serializable {
             if ("".equals(rsrcName)) {
                 return null;
             }
-            URL url = baseClass.getResource(rsrcName);
-            if (isVerbose && url == null) {
+
+            var cachekeyField = this.resource.getClass().getSuperclass().getDeclaredField("cacheKey");
+            cachekeyField.setAccessible(true);
+            var cachekey = cachekeyField.get(this.resource);
+            var callerRefField = cachekey.getClass().getDeclaredField("callerRef");
+            callerRefField.setAccessible(true);
+            var callerRef = callerRefField.get(cachekey);
+            var referentField = callerRef.getClass().getSuperclass().getSuperclass().getDeclaredField("referent");
+            referentField.setAccessible(true);
+            var referent = (Module) referentField.get(callerRef);
+
+            var inputStream = referent.getResourceAsStream(rsrcName);
+            if (isVerbose && inputStream == null) {
                 System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \"" + key + suffix + "\" resource:" + rsrcName + " not found.");
             }
-            return (url == null) ? null : new ImageIcon(url);
+
+            if(inputStream!= null) {
+                Image image = ImageIO.read(inputStream);
+                return new ImageIcon(image);
+            }
         } catch (MissingResourceException e) {
             if (isVerbose) {
                 System.err.println("Warning ResourceBundleUtil[" + baseName + "].getIconProperty \"" + key + suffix + "\" not found.");
                 //e.printStackTrace();
             }
             return null;
+        } catch (NoSuchFieldException | IllegalAccessException |
+                 IOException ignored) {
         }
+
+        return null;
     }
 
     /**
@@ -440,16 +463,6 @@ public class ResourceBundleUtil implements Serializable {
         return ks;
     }
 
-    /**
-     * Get the appropriate ResourceBundle subclass.
-     *
-     * @see java.util.ResourceBundle
-     */
-    public static ResourceBundleUtil getBundle(String baseName)
-            throws MissingResourceException {
-        return getBundle(baseName, LocaleUtil.getDefault());
-    }
-
     public void setBaseClass(Class<?> baseClass) {
         this.baseClass = baseClass;
     }
@@ -527,10 +540,10 @@ public class ResourceBundleUtil implements Serializable {
      *
      * @see java.util.ResourceBundle
      */
-    public static ResourceBundleUtil getBundle(String baseName, Locale locale)
+    public static ResourceBundleUtil getBundle(ResourceBundle bundle)
             throws MissingResourceException {
         ResourceBundleUtil r;
-        r = new ResourceBundleUtil(baseName, locale);
+        r = new ResourceBundleUtil(bundle);
         return r;
     }
 

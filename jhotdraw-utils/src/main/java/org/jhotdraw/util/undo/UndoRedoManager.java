@@ -5,7 +5,7 @@
  * You may not use, copy or modify this file, except in compliance with the
  * accompanying license terms.
  */
-package org.jhotdraw.undo;
+package org.jhotdraw.util.undo;
 
 import java.awt.event.*;
 import java.beans.*;
@@ -125,7 +125,7 @@ public class UndoRedoManager extends UndoManager { //javax.swing.undo.UndoManage
 
     public static ResourceBundleUtil getLabels() {
         if (labels == null) {
-            labels = ResourceBundleUtil.getBundle("org.jhotdraw.undo.Labels");
+            labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.undo.Labels", LocaleUtil.getDefault()));
         }
         return labels;
     }
@@ -140,7 +140,7 @@ public class UndoRedoManager extends UndoManager { //javax.swing.undo.UndoManage
     }
 
     public void setLocale(Locale l) {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.undo.Labels", l);
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.undo.Labels", l));
     }
 
     /**

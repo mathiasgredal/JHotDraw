@@ -10,7 +10,10 @@ package org.jhotdraw.draw.action;
 import org.jhotdraw.draw.figure.CompositeFigure;
 import org.jhotdraw.draw.figure.GroupFigure;
 import org.jhotdraw.draw.*;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
+
+import java.util.ResourceBundle;
 
 /**
  * UngroupAction.
@@ -32,14 +35,14 @@ public class UngroupAction extends GroupAction {
      */
     public UngroupAction(DrawingEditor editor) {
         super(editor, new GroupFigure(), false);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
         updateEnabledState();
     }
 
     public UngroupAction(DrawingEditor editor, CompositeFigure prototype) {
         super(editor, prototype, false);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
         updateEnabledState();
     }

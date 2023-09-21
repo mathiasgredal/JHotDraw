@@ -12,6 +12,8 @@ import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.util.*;
 
+import java.util.ResourceBundle;
+
 /**
  * Presents a find dialog to the user and then highlights the found items
  * in the active view.
@@ -36,7 +38,7 @@ public abstract class AbstractFindAction extends AbstractViewAction {
      */
     public AbstractFindAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 }

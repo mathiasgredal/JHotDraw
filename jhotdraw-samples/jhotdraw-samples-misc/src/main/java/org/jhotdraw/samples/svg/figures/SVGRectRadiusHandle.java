@@ -11,14 +11,16 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
-import org.jhotdraw.draw.*;
+import java.util.ResourceBundle;
+
+import org.jhotdraw.util.*;
+
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.event.CompositeFigureEdit;
 import org.jhotdraw.draw.handle.AbstractHandle;
 import org.jhotdraw.draw.handle.HandleAttributeKeys;
 import org.jhotdraw.geom.Dimension2DDouble;
-import org.jhotdraw.undo.PropertyChangeEdit;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.PropertyChangeEdit;
 
 /**
  * A Handle to manipulate the radius of a round lead rectangle.
@@ -107,7 +109,7 @@ public class SVGRectRadiusHandle extends AbstractHandle {
         final Dimension2DDouble oldValue = originalArc2D;
         final Dimension2DDouble newValue = new Dimension2DDouble(svgRect.getArcWidth(), svgRect.getArcHeight());
         ResourceBundleUtil labels
-                = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         CompositeFigureEdit edit = new CompositeFigureEdit(svgRect, labels.getString("attribute.roundRectRadius"));
         edit.setVerbose(true);
         fireUndoableEditHappened(edit);
@@ -148,7 +150,7 @@ public class SVGRectRadiusHandle extends AbstractHandle {
             owner.setArc(newArc.width, newArc.height);
             owner.changed();
             ResourceBundleUtil labels
-                    = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                    = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             CompositeFigureEdit edit = new CompositeFigureEdit(owner, labels.getString("attribute.roundRectRadius"));
             fireUndoableEditHappened(edit);
             fireUndoableEditHappened(new PropertyChangeEdit(owner, SVGRectFigure.ARC_WIDTH_PROPERTY, oldArc.width, newArc.width));
@@ -159,7 +161,7 @@ public class SVGRectRadiusHandle extends AbstractHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        return ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").
+        return ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())).
                 getString("handle.roundRectangleRadius.toolTipText");
     }
 }

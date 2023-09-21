@@ -11,10 +11,11 @@ import org.jhotdraw.draw.figure.RectangleFigure;
 import org.jhotdraw.gui.action.ButtonFactory;
 import java.awt.*;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.*;
-import org.jhotdraw.draw.action.*;
+
 import org.jhotdraw.draw.io.SerializationInputOutputFormat;
 import org.jhotdraw.draw.tool.CreationTool;
 import org.jhotdraw.util.*;
@@ -33,7 +34,7 @@ public class CreationToolSample {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                 // Create a drawing view with a default drawing, and
                 // input/output formats for basic clipboard support.
                 DrawingView view = new DefaultDrawingView();

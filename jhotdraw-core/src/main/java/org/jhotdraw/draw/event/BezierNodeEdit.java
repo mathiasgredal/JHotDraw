@@ -13,7 +13,10 @@ import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoableEdit;
 import org.jhotdraw.draw.figure.BezierFigure;
 import org.jhotdraw.geom.BezierPath;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
+
+import java.util.ResourceBundle;
 
 /**
  * An {@code UndoableEdit} event which can undo a change of a node in
@@ -42,7 +45,7 @@ public class BezierNodeEdit extends AbstractUndoableEdit {
 
     @Override
     public String getPresentationName() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         if (oldValue.mask != newValue.mask) {
             return labels.getString("edit.bezierNode.changeType.text");
         } else {

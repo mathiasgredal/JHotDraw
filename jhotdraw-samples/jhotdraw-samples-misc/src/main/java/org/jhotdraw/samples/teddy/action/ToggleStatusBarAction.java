@@ -8,12 +8,13 @@
 package org.jhotdraw.samples.teddy.action;
 
 import java.awt.event.*;
+import java.util.ResourceBundle;
 import javax.swing.Action;
 import org.jhotdraw.action.AbstractViewAction;
 import org.jhotdraw.api.app.Application;
+import org.jhotdraw.util.*;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.samples.teddy.TeddyView;
-import org.jhotdraw.util.*;
 
 /**
  * ToggleStatusBarAction.
@@ -25,7 +26,7 @@ public class ToggleStatusBarAction extends AbstractViewAction {
 
     private static final long serialVersionUID = 1L;
     public static final String ID = "view.toggleStatusBar";
-    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.teddy.Labels");
+    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.teddy.Labels", LocaleUtil.getDefault()));
 
     /**
      * Creates a new instance.

@@ -14,10 +14,7 @@ import java.beans.PropertyChangeListener;
 import java.io.File;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,8 +31,8 @@ import org.jhotdraw.app.action.file.LoadFileAction;
 import org.jhotdraw.app.action.file.LoadRecentFileAction;
 import org.jhotdraw.app.action.file.OpenRecentFileAction;
 import org.jhotdraw.beans.AbstractBean;
-import org.jhotdraw.util.*;
 import org.jhotdraw.util.prefs.PreferencesUtil;
+import org.jhotdraw.util.*;
 
 /**
  * This abstract class can be extended to implement an {@link Application}.
@@ -376,7 +373,7 @@ public abstract class AbstractApplication extends AbstractBean implements Applic
     }
 
     protected void initLabels() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
     }
 
     /**

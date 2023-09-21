@@ -10,7 +10,10 @@ package org.jhotdraw.app.action.file;
 import org.jhotdraw.api.app.Application;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.api.gui.URIChooser;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
+
+import java.util.ResourceBundle;
 
 /**
  * Les the user save unsaved changes of the active view, then presents
@@ -38,7 +41,7 @@ public class LoadDirectoryAction extends LoadFileAction {
      */
     public LoadDirectoryAction(Application app, View view) {
         super(app, view);
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
     }
 

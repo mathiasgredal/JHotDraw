@@ -10,6 +10,7 @@ package org.jhotdraw.samples.pert;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
+import org.jhotdraw.util.*;
 import org.jhotdraw.action.edit.CopyAction;
 import org.jhotdraw.action.edit.CutAction;
 import org.jhotdraw.action.edit.DuplicateAction;
@@ -31,8 +32,7 @@ import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.gui.action.ButtonFactory;
 import org.jhotdraw.samples.pert.figures.DependencyFigure;
 import org.jhotdraw.samples.pert.figures.TaskFigure;
-import org.jhotdraw.undo.UndoRedoManager;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.UndoRedoManager;
 
 /**
  * PertPanel.
@@ -51,7 +51,7 @@ public class PertPanel extends JPanel {
      * Creates new instance.
      */
     public PertPanel() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         initComponents();
         undoManager = new UndoRedoManager();
         editor = new DefaultDrawingEditor();
@@ -170,8 +170,8 @@ public class PertPanel extends JPanel {
     private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.pert.Labels");
-        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.pert.Labels", LocaleUtil.getDefault()));
+        ResourceBundleUtil drawLabels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         ButtonFactory.addSelectionToolTo(tb, editor);
         tb.addSeparator();
         attributes = new HashMap<AttributeKey<?>, Object>();

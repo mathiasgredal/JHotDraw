@@ -12,14 +12,15 @@ import org.jhotdraw.draw.figure.BezierFigure;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
+import java.util.ResourceBundle;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
-import org.jhotdraw.draw.*;
+import org.jhotdraw.util.*;
+
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.BezierNodeEdit;
 import org.jhotdraw.geom.BezierPath;
-import org.jhotdraw.undo.CompositeEdit;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.CompositeEdit;
 
 /**
  * A {@link Handle} which allows to interactively change a control point
@@ -261,7 +262,7 @@ public class BezierControlPointHandle extends AbstractHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         BezierPath.Node node = getBezierNode();
         if (node == null) {
             return null;

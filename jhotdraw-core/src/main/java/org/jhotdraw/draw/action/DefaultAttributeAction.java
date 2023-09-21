@@ -13,7 +13,8 @@ import java.util.*;
 import javax.swing.*;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.event.FigureSelectionEvent;
-import org.jhotdraw.undo.CompositeEdit;
+import org.jhotdraw.util.LocaleUtil;
+import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -92,7 +93,7 @@ public class DefaultAttributeAction extends AbstractSelectedAction {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
         if (getView() != null && getView().getSelectionCount() > 0) {
             ResourceBundleUtil labels
-                    = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                    = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             CompositeEdit edit = new CompositeEdit(labels.getString("drawAttributeChange"));
             fireUndoableEditHappened(edit);
             changeAttribute();

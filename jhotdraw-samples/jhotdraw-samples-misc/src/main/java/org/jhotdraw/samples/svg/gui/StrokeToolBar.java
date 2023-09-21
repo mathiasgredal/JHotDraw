@@ -15,13 +15,13 @@ import org.jhotdraw.gui.plaf.palette.PaletteColorChooserUI;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.plaf.SliderUI;
 import javax.swing.text.DefaultFormatterFactory;
 import org.jhotdraw.draw.AttributeKey;
 import org.jhotdraw.draw.DrawingEditor;
-import org.jhotdraw.draw.action.*;
 import org.jhotdraw.draw.event.FigureAttributeEditorHandler;
 import org.jhotdraw.draw.event.SelectionComponentDisplayer;
 import org.jhotdraw.draw.event.SelectionComponentRepainter;
@@ -48,7 +48,7 @@ public class StrokeToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public StrokeToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         setName(labels.getString("stroke.toolbar"));
         setDisclosureStateCount(3);
     }
@@ -77,7 +77,7 @@ public class StrokeToolBar extends AbstractToolBar {
                 if (editor == null) {
                     break;
                 }
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;
@@ -167,7 +167,7 @@ public class StrokeToolBar extends AbstractToolBar {
                 if (editor == null) {
                     break;
                 }
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 layout = new GridBagLayout();
                 p.setLayout(layout);
                 // Stroke color field and button

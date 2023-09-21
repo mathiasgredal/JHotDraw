@@ -11,11 +11,13 @@ import org.jhotdraw.draw.figure.TextHolderFigure;
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
+import java.util.ResourceBundle;
 import javax.swing.undo.AbstractUndoableEdit;
 import javax.swing.undo.UndoableEdit;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.text.*;
 import org.jhotdraw.geom.Insets2D;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -134,7 +136,7 @@ public class TextAreaEditingTool extends AbstractTool implements ActionListener 
 
                 @Override
                 public String getPresentationName() {
-                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                    ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                     return labels.getString("attribute.text.text");
                 }
 

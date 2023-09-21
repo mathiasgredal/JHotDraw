@@ -7,15 +7,16 @@ package org.jhotdraw.samples.teddy;
 
 import org.jhotdraw.api.app.Application;
 import java.awt.*;
+import java.util.ResourceBundle;
 import java.util.prefs.*;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.text.*;
 import org.jhotdraw.samples.teddy.regex.MatchType;
 import org.jhotdraw.samples.teddy.regex.Matcher;
-import org.jhotdraw.undo.CompositeEdit;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.prefs.*;
+import org.jhotdraw.util.*;
 
 /**
  *
@@ -34,7 +35,7 @@ public class FindDialog extends javax.swing.JDialog {
      */
     private FindDialog(Frame parent, boolean modal) {
         super(parent, modal);
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.teddy.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.teddy.Labels", LocaleUtil.getDefault()));
         initComponents();
         buttonPanel.setBorder(new EmptyBorder(0, -5, 0, -5));
         setAlwaysOnTop(true);

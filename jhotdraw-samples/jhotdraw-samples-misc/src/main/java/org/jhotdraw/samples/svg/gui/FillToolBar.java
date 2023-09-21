@@ -15,13 +15,13 @@ import org.jhotdraw.gui.plaf.palette.PaletteColorChooserUI;
 import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.plaf.SliderUI;
 import javax.swing.text.DefaultFormatterFactory;
 import org.jhotdraw.draw.AttributeKey;
 import org.jhotdraw.draw.DrawingEditor;
-import org.jhotdraw.draw.action.*;
 import org.jhotdraw.draw.event.FigureAttributeEditorHandler;
 import org.jhotdraw.draw.event.SelectionComponentDisplayer;
 import org.jhotdraw.draw.event.SelectionComponentRepainter;
@@ -48,7 +48,7 @@ public class FillToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public FillToolBar() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         setName(labels.getString(getID() + ".toolbar"));
         setDisclosureStateCount(3);
     }
@@ -77,7 +77,7 @@ public class FillToolBar extends AbstractToolBar {
                 if (editor == null) {
                     break;
                 }
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 GridBagLayout layout = new GridBagLayout();
                 p.setLayout(layout);
                 GridBagConstraints gbc;
@@ -138,7 +138,7 @@ public class FillToolBar extends AbstractToolBar {
                 p3.setOpaque(false);
                 p.setBorder(new EmptyBorder(5, 5, 5, 8));
                 p.removeAll();
-                labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+                labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
                 layout = new GridBagLayout();
                 p.setLayout(layout);
                 // Fill color field and button

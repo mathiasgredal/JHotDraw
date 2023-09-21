@@ -10,12 +10,14 @@ package org.jhotdraw.samples.odg.figures;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.geom.*;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import javax.swing.undo.*;
-import org.jhotdraw.draw.*;
+
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.handle.AbstractHandle;
 import org.jhotdraw.geom.Dimension2DDouble;
-import org.jhotdraw.undo.CompositeEdit;
+import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.*;
 
 /**
@@ -100,7 +102,7 @@ public class ODGRectRadiusHandle extends AbstractHandle {
 
             @Override
             public String getPresentationName() {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.odg.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.odg.Labels", LocaleUtil.getDefault()));
                 return labels.getString("arc");
             }
 
@@ -124,7 +126,7 @@ public class ODGRectRadiusHandle extends AbstractHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        return ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").
+        return ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())).
                 getString("handle.roundRectangleRadius.toolTipText");
     }
 }

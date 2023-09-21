@@ -11,12 +11,14 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
-import org.jhotdraw.draw.*;
+import java.util.ResourceBundle;
+
+import org.jhotdraw.util.*;
+
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.TransformEdit;
 import org.jhotdraw.draw.event.TransformRestoreEdit;
 import org.jhotdraw.geom.Geom;
-import org.jhotdraw.util.*;
 
 /**
  * This abstract class can be extended to implement a {@link Handle} which
@@ -48,7 +50,7 @@ public abstract class AbstractRotateHandle extends AbstractHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         return labels.getString("handle.rotate.toolTipText");
     }
 

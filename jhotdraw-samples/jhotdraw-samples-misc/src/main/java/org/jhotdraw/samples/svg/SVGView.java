@@ -10,10 +10,12 @@ package org.jhotdraw.samples.svg;
 
 import java.awt.print.Pageable;
 import java.beans.*;
+import org.jhotdraw.util.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.net.URI;
 import java.util.HashMap;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.action.edit.RedoAction;
 import org.jhotdraw.action.edit.UndoAction;
@@ -27,8 +29,7 @@ import org.jhotdraw.draw.print.DrawingPageable;
 import org.jhotdraw.gui.JFileURIChooser;
 import org.jhotdraw.net.URIUtil;
 import org.jhotdraw.samples.svg.io.SVGOutputFormat;
-import org.jhotdraw.undo.UndoRedoManager;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.UndoRedoManager;
 
 /**
  * Provides a view on a SVG drawing.
@@ -170,7 +171,7 @@ public class SVGView extends AbstractView {
                 }
             }
             if (!success) {
-                ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.app.Labels");
+                ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.app.Labels", LocaleUtil.getDefault()));
                 throw new IOException(labels.getFormatted("file.open.unsupportedFileFormat.message", URIUtil.getName(uri)));
             }
             SwingUtilities.invokeAndWait(new Runnable() {

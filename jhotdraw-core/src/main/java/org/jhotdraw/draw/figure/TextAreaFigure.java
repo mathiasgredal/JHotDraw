@@ -22,9 +22,10 @@ import org.jhotdraw.draw.tool.TextAreaEditingTool;
 import org.jhotdraw.draw.tool.Tool;
 import org.jhotdraw.geom.Dimension2DDouble;
 import org.jhotdraw.geom.Insets2D;
-import org.jhotdraw.util.*;
 import org.jhotdraw.xml.DOMInput;
 import org.jhotdraw.xml.DOMOutput;
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
+import org.jhotdraw.util.*;
 
 /**
  * A {@code TextHolderFigure} which holds multiple lines of text in a
@@ -71,7 +72,7 @@ public class TextAreaFigure extends AbstractAttributedDecoratedFigure implements
      * Creates a new instance.
      */
     public TextAreaFigure() {
-        this(ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").
+        this(ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels",LocaleUtil.getDefault()) ).
                 getString("TextFigure.defaultText"));
     }
 
@@ -365,7 +366,7 @@ public class TextAreaFigure extends AbstractAttributedDecoratedFigure implements
 
     @Override
     public void setFontSize(float size) {
-        set(FONT_SIZE, new Double(size));
+        set(FONT_SIZE, (double) size);
     }
 
     @Override

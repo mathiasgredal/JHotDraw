@@ -16,7 +16,7 @@ import java.io.*;
 import java.util.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
-import org.jhotdraw.draw.*;
+
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.event.TransformRestoreEdit;
 import org.jhotdraw.draw.handle.BoundsOutlineHandle;
@@ -258,7 +258,7 @@ public class SVGImageFigure extends SVGAttributedFigure implements SVGFigure, Im
 
     @Override
     public Collection<Action> getActions(Point2D.Double p) {
-        final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         LinkedList<Action> actions = new LinkedList<Action>();
         if (get(TRANSFORM) != null) {
             actions.add(new AbstractAction(labels.getString("edit.removeTransform.text")) {
@@ -456,7 +456,7 @@ public class SVGImageFigure extends SVGAttributedFigure implements SVGFigure, Im
         try {
             loadImage(in);
         } catch (Throwable t) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             IOException e = new IOException(labels.getFormatted("file.failedToLoadImage.message", file.getName()));
             e.initCause(t);
             throw e;
@@ -480,7 +480,7 @@ public class SVGImageFigure extends SVGAttributedFigure implements SVGFigure, Im
             img = null;
         }
         if (img == null) {
-            ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+            ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
             throw new IOException(labels.getFormatted("file.failedToLoadImage.message", in.toString()));
         }
         imageData = baos.toByteArray();

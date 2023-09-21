@@ -11,6 +11,7 @@ import org.jhotdraw.gui.plaf.palette.PaletteFormattedTextFieldUI;
 import org.jhotdraw.gui.plaf.palette.PaletteButtonUI;
 import org.jhotdraw.gui.plaf.palette.PaletteSliderUI;
 import java.awt.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.plaf.SliderUI;
@@ -42,7 +43,7 @@ public class FigureToolBar extends AbstractToolBar {
      * Creates new instance.
      */
     public FigureToolBar() {
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         setName(labels.getString(getID() + ".toolbar"));
         setDisclosureStateCount(3);
     }

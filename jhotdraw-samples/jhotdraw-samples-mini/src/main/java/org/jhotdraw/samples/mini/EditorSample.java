@@ -16,6 +16,7 @@ import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.liner.ElbowLiner;
 import org.jhotdraw.draw.tool.DelegationSelectionTool;
 import org.jhotdraw.geom.Geom;
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 
 /**
  * Example showing how to create an editor that can edit figures on a drawing

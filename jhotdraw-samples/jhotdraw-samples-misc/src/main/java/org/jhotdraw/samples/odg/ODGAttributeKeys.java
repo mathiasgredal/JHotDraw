@@ -9,9 +9,12 @@ package org.jhotdraw.samples.odg;
 
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
+import java.util.ResourceBundle;
+
 import org.jhotdraw.draw.*;
 import org.jhotdraw.samples.odg.ODGConstants.FillStyle;
 import org.jhotdraw.samples.odg.ODGConstants.StrokeStyle;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -27,7 +30,7 @@ import org.jhotdraw.util.ResourceBundleUtil;
  */
 public class ODGAttributeKeys extends AttributeKeys {
 
-    private static final ResourceBundleUtil LABELS = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+    private static final ResourceBundleUtil LABELS = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
 
     /**
      * Prevent instance creation

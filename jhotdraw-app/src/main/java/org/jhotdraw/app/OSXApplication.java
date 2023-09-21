@@ -15,6 +15,8 @@ import java.net.URI;
 import java.util.*;
 import java.util.prefs.*;
 import javax.swing.*;
+
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.action.edit.AbstractFindAction;
 import org.jhotdraw.action.edit.ClearSelectionAction;
 import org.jhotdraw.action.edit.CopyAction;

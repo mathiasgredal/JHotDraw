@@ -11,11 +11,13 @@ import org.jhotdraw.draw.figure.TextHolderFigure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
+import java.util.ResourceBundle;
 import javax.swing.undo.*;
-import org.jhotdraw.draw.*;
+
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.locator.FontSizeLocator;
 import org.jhotdraw.draw.locator.Locator;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -104,7 +106,7 @@ public class FontSizeHandle extends LocatorHandle {
             @Override
             public String getPresentationName() {
                 ResourceBundleUtil labels
-                        = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                        = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                 return labels.getString("attribute.fontSize.text");
             }
 
@@ -162,7 +164,7 @@ public class FontSizeHandle extends LocatorHandle {
                 @Override
                 public String getPresentationName() {
                     ResourceBundleUtil labels
-                            = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+                            = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
                     return labels.getString("attribute.fontSize");
                 }
 
@@ -188,6 +190,6 @@ public class FontSizeHandle extends LocatorHandle {
 
     @Override
     public String getToolTipText(Point p) {
-        return ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels").getString("handle.fontSize.toolTipText");
+        return ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault())).getString("handle.fontSize.toolTipText");
     }
 }

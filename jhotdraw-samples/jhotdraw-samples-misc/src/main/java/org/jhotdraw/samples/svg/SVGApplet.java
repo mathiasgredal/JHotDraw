@@ -9,6 +9,7 @@ package org.jhotdraw.samples.svg;
 
 import java.applet.AppletContext;
 import java.awt.*;
+import org.jhotdraw.util.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
@@ -32,7 +33,6 @@ import org.jhotdraw.samples.svg.gui.ProgressIndicator;
 import org.jhotdraw.samples.svg.io.SVGOutputFormat;
 import org.jhotdraw.samples.svg.io.SVGZInputFormat;
 import org.jhotdraw.samples.svg.io.SVGZOutputFormat;
-import org.jhotdraw.util.*;
 
 /**
  * This is the base class for concrete implementations of SVG drawing
@@ -108,7 +108,7 @@ public class SVGApplet extends JApplet {
         if (getParameter("Locale") != null) {
             Locale.setDefault(new Locale(getParameter("Locale")));
         }
-        final ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        final ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         // Set look and feel
         // -----------------
         try {

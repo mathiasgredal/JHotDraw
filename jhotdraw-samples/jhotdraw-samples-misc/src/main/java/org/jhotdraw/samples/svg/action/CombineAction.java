@@ -12,12 +12,12 @@ import org.jhotdraw.draw.figure.CompositeFigure;
 import java.awt.geom.AffineTransform;
 import java.util.*;
 import javax.swing.undo.*;
+import org.jhotdraw.util.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.action.*;
 import org.jhotdraw.samples.svg.figures.SVGBezierFigure;
 import org.jhotdraw.samples.svg.figures.SVGPathFigure;
-import org.jhotdraw.util.*;
 
 /**
  * CombinePathsAction.
@@ -38,7 +38,7 @@ public class CombineAction extends AbstractSelectedAction {
      */
     private boolean isCombineAction;
     private ResourceBundleUtil labels
-            = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+            = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
 
     /**
      * Creates a new instance.
@@ -55,7 +55,7 @@ public class CombineAction extends AbstractSelectedAction {
         super(editor);
         this.prototype = prototype;
         this.isCombineAction = isGroupingAction;
-        labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.svg.Labels");
+        labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.svg.Labels", LocaleUtil.getDefault()));
         labels.configureAction(this, ID);
         updateEnabledState();
     }

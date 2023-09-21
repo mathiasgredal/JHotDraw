@@ -16,6 +16,7 @@ import org.jhotdraw.draw.liner.Liner;
 import org.jhotdraw.geom.Dimension2DDouble;
 import org.jhotdraw.geom.DoubleStroke;
 import org.jhotdraw.geom.Insets2D;
+import org.jhotdraw.util.LocaleUtil;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**
@@ -30,7 +31,7 @@ import org.jhotdraw.util.ResourceBundleUtil;
  */
 public class AttributeKeys {
 
-    private static final ResourceBundleUtil LABELS = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+    private static final ResourceBundleUtil LABELS = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
     /**
      * Canvas fill color. The value of this attribute is a Color object. This attribute is used by a
      * Drawing object to specify the fill color of the drawing. The default value is white.

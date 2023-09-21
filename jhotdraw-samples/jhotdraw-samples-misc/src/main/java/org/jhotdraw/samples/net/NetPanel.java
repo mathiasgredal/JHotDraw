@@ -29,7 +29,7 @@ import org.jhotdraw.draw.tool.TextCreationTool;
 import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.gui.action.ButtonFactory;
 import org.jhotdraw.samples.net.figures.NodeFigure;
-import org.jhotdraw.undo.UndoRedoManager;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
 
 /**
@@ -49,7 +49,7 @@ public class NetPanel extends JPanel {
      * Creates new instance.
      */
     public NetPanel() {
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.draw.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.draw.Labels", LocaleUtil.getDefault()));
         initComponents();
         undoManager = new UndoRedoManager();
         editor = new DefaultDrawingEditor();
@@ -168,7 +168,7 @@ public class NetPanel extends JPanel {
     private void addCreationButtonsTo(JToolBar tb, final DrawingEditor editor) {
         // AttributeKeys for the entitie sets
         HashMap<AttributeKey<?>, Object> attributes;
-        ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.samples.net.Labels");
+        ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.samples.net.Labels", LocaleUtil.getDefault()));
         ButtonFactory.addSelectionToolTo(tb, editor);
         tb.addSeparator();
         attributes = new HashMap<AttributeKey<?>, Object>();

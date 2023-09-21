@@ -9,6 +9,7 @@ package org.jhotdraw.action.edit;
 
 import java.awt.event.*;
 import java.beans.*;
+import java.util.ResourceBundle;
 import javax.swing.*;
 import org.jhotdraw.action.AbstractViewAction;
 import org.jhotdraw.api.app.Application;
@@ -36,7 +37,7 @@ public class RedoAction extends AbstractViewAction {
 
     private static final long serialVersionUID = 1L;
     public static final String ID = "edit.redo";
-    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle("org.jhotdraw.action.Labels");
+    private ResourceBundleUtil labels = ResourceBundleUtil.getBundle(ResourceBundle.getBundle("org.jhotdraw.action.Labels", LocaleUtil.getDefault()));
     private PropertyChangeListener redoActionPropertyListener = new PropertyChangeListener() {
         @Override
         public void propertyChange(PropertyChangeEvent evt) {
