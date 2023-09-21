@@ -10,11 +10,11 @@ package org.jhotdraw.samples.svg.gui;
 import org.jhotdraw.gui.plaf.palette.PaletteButtonUI;
 import java.awt.*;
 import javax.swing.*;
+import org.jhotdraw.util.*;
 import javax.swing.border.*;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.action.*;
 import org.jhotdraw.draw.event.SelectionComponentDisplayer;
-import org.jhotdraw.util.*;
 
 /**
  * AlignToolBar.

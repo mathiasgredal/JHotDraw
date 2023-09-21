@@ -9,13 +9,13 @@ package org.jhotdraw.samples.odg;
 
 import java.awt.*;
 import javax.swing.*;
+import org.jhotdraw.util.*;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.DrawingView;
 import org.jhotdraw.draw.event.FigureAttributeEditorHandler;
 import org.jhotdraw.draw.gui.JAttributeSlider;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
 import org.jhotdraw.formatter.JavaNumberFormatter;
-import org.jhotdraw.util.*;
 
 /**
  * The ODGPropertiesPanel allows to edit properties (attributes and other things)

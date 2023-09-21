@@ -11,6 +11,7 @@ import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.figure.ConnectionFigure;
 import org.jhotdraw.draw.figure.AbstractAttributedCompositeFigure;
 import java.awt.*;
+import org.jhotdraw.util.*;
 import java.awt.event.*;
 import java.awt.geom.*;
 import java.awt.image.BufferedImage;
@@ -36,7 +37,6 @@ import org.jhotdraw.samples.odg.Gradient;
 import org.jhotdraw.samples.odg.ODGAttributeKeys;
 import static org.jhotdraw.samples.odg.ODGAttributeKeys.*;
 import org.jhotdraw.samples.odg.ODGConstants;
-import org.jhotdraw.util.*;
 
 /**
  * ODGPath is a composite Figure which contains one or more

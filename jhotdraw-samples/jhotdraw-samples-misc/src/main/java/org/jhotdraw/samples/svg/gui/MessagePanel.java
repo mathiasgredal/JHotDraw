@@ -9,8 +9,8 @@ package org.jhotdraw.samples.svg.gui;
 
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 import org.jhotdraw.util.*;
+import javax.swing.event.*;
 
 /**
  * MessagePanel.

@@ -9,6 +9,7 @@ package org.jhotdraw.samples.svg.figures;
 
 import java.awt.*;
 import java.awt.event.*;
+import org.jhotdraw.util.*;
 import java.awt.geom.*;
 import java.awt.image.BufferedImage;
 import java.util.*;
@@ -33,7 +34,6 @@ import org.jhotdraw.geom.Shapes;
 import org.jhotdraw.samples.svg.Gradient;
 import org.jhotdraw.samples.svg.SVGAttributeKeys;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
-import org.jhotdraw.util.*;
 
 /**
  * SVGPath is a composite Figure which contains one or more SVGBezierFigures as its children.

@@ -21,8 +21,8 @@ import org.jhotdraw.draw.connector.Connector;
 import org.jhotdraw.geom.Dimension2DDouble;
 import org.jhotdraw.geom.Geom;
 import org.jhotdraw.io.Base64;
-import org.jhotdraw.util.*;
 import org.jhotdraw.xml.*;
+import org.jhotdraw.util.*;
 
 /**
  * A default implementation of {@link ImageHolderFigure} which can hold a buffered image.

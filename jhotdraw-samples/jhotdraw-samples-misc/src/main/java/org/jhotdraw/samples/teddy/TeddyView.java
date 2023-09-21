@@ -26,7 +26,7 @@ import org.jhotdraw.gui.JFileURIChooser;
 import org.jhotdraw.samples.teddy.io.*;
 import org.jhotdraw.samples.teddy.regex.*;
 import org.jhotdraw.samples.teddy.text.*;
-import org.jhotdraw.undo.UndoRedoManager;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.prefs.PreferencesUtil;
 
 /**

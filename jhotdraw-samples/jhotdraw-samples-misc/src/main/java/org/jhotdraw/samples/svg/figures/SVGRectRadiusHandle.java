@@ -11,14 +11,14 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
-import org.jhotdraw.draw.*;
+import org.jhotdraw.util.*;
+
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.event.CompositeFigureEdit;
 import org.jhotdraw.draw.handle.AbstractHandle;
 import org.jhotdraw.draw.handle.HandleAttributeKeys;
 import org.jhotdraw.geom.Dimension2DDouble;
-import org.jhotdraw.undo.PropertyChangeEdit;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.PropertyChangeEdit;
 
 /**
  * A Handle to manipulate the radius of a round lead rectangle.

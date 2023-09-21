@@ -11,11 +11,11 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.geom.*;
 import javax.swing.undo.*;
-import org.jhotdraw.draw.*;
+
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.handle.AbstractHandle;
 import org.jhotdraw.geom.Dimension2DDouble;
-import org.jhotdraw.undo.CompositeEdit;
+import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.*;
 
 /**

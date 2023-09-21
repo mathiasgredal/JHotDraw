@@ -36,7 +36,7 @@ import org.jhotdraw.samples.svg.figures.SVGPathFigure;
 import org.jhotdraw.samples.svg.figures.SVGRectFigure;
 import org.jhotdraw.samples.svg.figures.SVGTextAreaFigure;
 import org.jhotdraw.samples.svg.figures.SVGTextFigure;
-import org.jhotdraw.undo.UndoRedoManager;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
 
 /**

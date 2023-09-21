@@ -27,9 +27,9 @@ import org.jhotdraw.draw.handle.TransformHandleKit;
 import org.jhotdraw.geom.BezierPath;
 import org.jhotdraw.geom.Geom;
 import org.jhotdraw.geom.GrowStroke;
-import org.jhotdraw.util.*;
 import org.jhotdraw.xml.DOMInput;
 import org.jhotdraw.xml.DOMOutput;
+import org.jhotdraw.util.*;
 
 /**
  * A {@link Figure} which draws an opened or a closed bezier path.

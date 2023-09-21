@@ -11,12 +11,12 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
-import org.jhotdraw.draw.*;
+import org.jhotdraw.util.*;
+
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.TransformEdit;
 import org.jhotdraw.draw.event.TransformRestoreEdit;
 import org.jhotdraw.geom.Geom;
-import org.jhotdraw.util.*;
 
 /**
  * This abstract class can be extended to implement a {@link Handle} which

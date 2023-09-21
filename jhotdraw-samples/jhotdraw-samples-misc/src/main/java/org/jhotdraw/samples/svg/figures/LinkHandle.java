@@ -10,7 +10,7 @@ package org.jhotdraw.samples.svg.figures;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.geom.*;
-import org.jhotdraw.draw.*;
+
 import org.jhotdraw.draw.handle.AbstractHandle;
 import org.jhotdraw.draw.handle.HandleAttributeKeys;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;

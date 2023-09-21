@@ -12,7 +12,7 @@ import java.awt.geom.*;
 import java.util.HashSet;
 import org.jhotdraw.draw.*;
 import org.jhotdraw.draw.event.TransformEdit;
-import org.jhotdraw.undo.CompositeEdit;
+import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**

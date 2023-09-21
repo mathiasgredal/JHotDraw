@@ -45,7 +45,7 @@ import org.jhotdraw.samples.svg.figures.SVGTextFigure;
 import org.jhotdraw.samples.svg.io.ImageMapOutputFormat;
 import org.jhotdraw.samples.svg.io.SVGOutputFormat;
 import org.jhotdraw.samples.svg.io.SVGZOutputFormat;
-import org.jhotdraw.undo.UndoRedoManager;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
 
 /**

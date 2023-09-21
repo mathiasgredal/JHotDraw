@@ -12,6 +12,7 @@ import java.awt.font.*;
 import java.awt.geom.*;
 import java.io.*;
 import java.util.*;
+import org.jhotdraw.util.*;
 import org.jhotdraw.draw.AttributeKeys;
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.handle.BoundsOutlineHandle;
@@ -24,7 +25,6 @@ import org.jhotdraw.draw.tool.Tool;
 import org.jhotdraw.geom.Dimension2DDouble;
 import org.jhotdraw.geom.Geom;
 import org.jhotdraw.geom.Insets2D;
-import org.jhotdraw.util.*;
 import org.jhotdraw.xml.DOMInput;
 import org.jhotdraw.xml.DOMOutput;
 

@@ -12,6 +12,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
 import java.awt.image.*;
+import org.jhotdraw.util.*;
 import java.util.*;
 import javax.swing.*;
 import org.jhotdraw.draw.*;
@@ -19,7 +20,6 @@ import static org.jhotdraw.draw.AttributeKeys.STROKE_WIDTH;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.samples.svg.SVGAttributeKeys;
 import static org.jhotdraw.samples.svg.SVGAttributeKeys.*;
-import org.jhotdraw.util.*;
 
 /**
  * SVGAttributedFigure.

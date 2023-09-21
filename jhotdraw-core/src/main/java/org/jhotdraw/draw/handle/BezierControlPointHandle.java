@@ -14,12 +14,12 @@ import java.awt.event.*;
 import java.awt.geom.*;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
-import org.jhotdraw.draw.*;
+import org.jhotdraw.util.*;
+
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.BezierNodeEdit;
 import org.jhotdraw.geom.BezierPath;
-import org.jhotdraw.undo.CompositeEdit;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.CompositeEdit;
 
 /**
  * A {@link Handle} which allows to interactively change a control point

@@ -12,11 +12,11 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
-import org.jhotdraw.draw.*;
+import org.jhotdraw.util.*;
+
 import org.jhotdraw.draw.event.CompositeFigureEdit;
 import org.jhotdraw.geom.Geom;
-import org.jhotdraw.undo.PropertyChangeEdit;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.PropertyChangeEdit;
 
 /**
  * A {@link Handle} to manipulate the corner radius of a

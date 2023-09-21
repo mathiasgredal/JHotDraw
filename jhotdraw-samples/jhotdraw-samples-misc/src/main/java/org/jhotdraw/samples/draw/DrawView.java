@@ -11,6 +11,7 @@ package org.jhotdraw.samples.draw;
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.print.Pageable;
+import org.jhotdraw.util.*;
 import java.beans.*;
 import java.io.*;
 import java.lang.reflect.*;
@@ -38,8 +39,7 @@ import org.jhotdraw.draw.print.DrawingPageable;
 import org.jhotdraw.gui.PlacardScrollPaneLayout;
 import org.jhotdraw.gui.action.ButtonFactory;
 import org.jhotdraw.net.URIUtil;
-import org.jhotdraw.undo.UndoRedoManager;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.UndoRedoManager;
 
 /**
  * Provides a view on a drawing.

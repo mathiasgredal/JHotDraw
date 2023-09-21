@@ -10,6 +10,7 @@ package org.jhotdraw.samples.svg;
 
 import java.awt.print.Pageable;
 import java.beans.*;
+import org.jhotdraw.util.*;
 import java.io.*;
 import java.lang.reflect.*;
 import java.net.URI;
@@ -27,8 +28,7 @@ import org.jhotdraw.draw.print.DrawingPageable;
 import org.jhotdraw.gui.JFileURIChooser;
 import org.jhotdraw.net.URIUtil;
 import org.jhotdraw.samples.svg.io.SVGOutputFormat;
-import org.jhotdraw.undo.UndoRedoManager;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.UndoRedoManager;
 
 /**
  * Provides a view on a SVG drawing.

@@ -12,12 +12,12 @@ import org.jhotdraw.draw.figure.CompositeFigure;
 import java.awt.geom.AffineTransform;
 import java.util.*;
 import javax.swing.undo.*;
+import org.jhotdraw.util.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.draw.action.*;
 import org.jhotdraw.samples.svg.figures.SVGBezierFigure;
 import org.jhotdraw.samples.svg.figures.SVGPathFigure;
-import org.jhotdraw.util.*;
 
 /**
  * CombinePathsAction.

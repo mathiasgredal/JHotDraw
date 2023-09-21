@@ -13,9 +13,9 @@ import javax.swing.border.*;
 import javax.swing.text.*;
 import org.jhotdraw.samples.teddy.regex.MatchType;
 import org.jhotdraw.samples.teddy.regex.Matcher;
-import org.jhotdraw.undo.CompositeEdit;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.prefs.*;
+import org.jhotdraw.util.*;
 
 /**
  *

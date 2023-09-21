@@ -12,10 +12,19 @@ dependencies {
     implementation project(':jhotdraw-gui')
     implementation project(':jhotdraw-utils')
     implementation "org.devzendo:Quaqua:7.3.4"
-    implementation "net.sourceforge.htmlunit:htmlunit:2.37.0"
-    implementation "org.aspectj:aspectjweaver:1.9.9"
+    implementation "net.sourceforge.htmlunit:htmlunit:2.70.0"
 }
 
 application {
+    mainModule = moduleName
     mainClass = 'org.jhotdraw.samples.svg.Main'
+    project.configurations.implementation.setCanBeResolved(true)
+    applicationDefaultJvmArgs = [
+            "-javaagent:${project.configurations.implementation.find { it.name.startsWith("aspectjweaver") }}",
+            '--add-opens=java.base/java.lang=org.aspectj.weaver'
+    ]
 }
+
+//tasks.withType(JavaCompile) {
+//    modularity = 'none'
+//}

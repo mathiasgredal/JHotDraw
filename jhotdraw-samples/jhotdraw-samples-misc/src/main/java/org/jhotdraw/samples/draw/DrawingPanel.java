@@ -43,7 +43,7 @@ import org.jhotdraw.draw.tool.TextAreaCreationTool;
 import org.jhotdraw.draw.tool.TextCreationTool;
 import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.gui.action.ButtonFactory;
-import org.jhotdraw.undo.UndoRedoManager;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.*;
 
 /**

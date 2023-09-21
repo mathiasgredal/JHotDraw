@@ -11,7 +11,6 @@ import org.jhotdraw.draw.figure.Figure;
 import java.awt.geom.*;
 import java.util.*;
 import javax.swing.undo.*;
-import org.jhotdraw.draw.*;
 import org.jhotdraw.util.*;
 
 /**

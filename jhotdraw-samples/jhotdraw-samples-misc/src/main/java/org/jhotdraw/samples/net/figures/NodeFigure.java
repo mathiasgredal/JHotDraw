@@ -9,6 +9,7 @@ package org.jhotdraw.samples.net.figures;
 
 import org.jhotdraw.draw.figure.RectangleFigure;
 import org.jhotdraw.draw.figure.ConnectionFigure;
+import org.jhotdraw.util.*;
 import org.jhotdraw.draw.figure.TextFigure;
 import org.jhotdraw.draw.figure.LineConnectionFigure;
 import java.awt.geom.*;
@@ -25,7 +26,6 @@ import org.jhotdraw.draw.handle.MoveHandle;
 import org.jhotdraw.draw.locator.RelativeLocator;
 import org.jhotdraw.geom.Geom;
 import org.jhotdraw.geom.Insets2D;
-import org.jhotdraw.util.*;
 import org.jhotdraw.xml.*;
 
 /**

@@ -11,9 +11,9 @@ import java.awt.event.*;
 import javax.swing.Action;
 import org.jhotdraw.action.AbstractViewAction;
 import org.jhotdraw.api.app.Application;
+import org.jhotdraw.util.*;
 import org.jhotdraw.api.app.View;
 import org.jhotdraw.samples.teddy.TeddyView;
-import org.jhotdraw.util.*;
 
 /**
  * ToggleStatusBarAction.

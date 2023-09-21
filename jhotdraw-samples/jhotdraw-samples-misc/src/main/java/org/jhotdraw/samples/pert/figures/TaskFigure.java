@@ -10,6 +10,7 @@ package org.jhotdraw.samples.pert.figures;
 import org.jhotdraw.draw.figure.RectangleFigure;
 import org.jhotdraw.draw.figure.TextFigure;
 import org.jhotdraw.draw.figure.ListFigure;
+import org.jhotdraw.util.*;
 import java.awt.geom.*;
 import java.io.IOException;
 import java.util.*;
@@ -25,7 +26,6 @@ import org.jhotdraw.draw.handle.MoveHandle;
 import org.jhotdraw.draw.layouter.VerticalLayouter;
 import org.jhotdraw.draw.locator.RelativeLocator;
 import org.jhotdraw.geom.Insets2D;
-import org.jhotdraw.util.*;
 import org.jhotdraw.xml.*;
 
 /**

@@ -12,7 +12,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.*;
 import java.util.*;
-import org.jhotdraw.draw.*;
+
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.TransformRestoreEdit;
 import org.jhotdraw.draw.locator.Locator;

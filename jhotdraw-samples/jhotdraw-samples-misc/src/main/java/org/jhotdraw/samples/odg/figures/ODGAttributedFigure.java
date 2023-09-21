@@ -9,6 +9,7 @@ package org.jhotdraw.samples.odg.figures;
 
 import org.jhotdraw.draw.figure.AbstractAttributedFigure;
 import java.awt.*;
+import org.jhotdraw.util.*;
 import java.awt.event.*;
 import java.awt.geom.*;
 import java.awt.image.*;
@@ -19,7 +20,6 @@ import static org.jhotdraw.draw.AttributeKeys.TRANSFORM;
 import org.jhotdraw.samples.odg.ODGAttributeKeys;
 import static org.jhotdraw.samples.odg.ODGAttributeKeys.*;
 import org.jhotdraw.samples.odg.ODGConstants;
-import org.jhotdraw.util.*;
 
 /**
  * ODGAttributedFigure.

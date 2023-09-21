@@ -10,6 +10,7 @@ package org.jhotdraw.samples.svg.gui;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import org.jhotdraw.util.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -28,8 +29,7 @@ import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.gui.action.ButtonFactory;
 import org.jhotdraw.gui.plaf.palette.PaletteButtonUI;
 import org.jhotdraw.samples.svg.figures.SVGGroupFigure;
-import org.jhotdraw.undo.UndoRedoManager;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.UndoRedoManager;
 
 /**
  * ActionsToolBar.

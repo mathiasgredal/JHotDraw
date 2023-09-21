@@ -14,7 +14,7 @@ import java.util.HashMap;
 import javax.swing.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.*;
-import org.jhotdraw.draw.action.*;
+
 import org.jhotdraw.draw.io.SerializationInputOutputFormat;
 import org.jhotdraw.draw.tool.CreationTool;
 import org.jhotdraw.util.*;

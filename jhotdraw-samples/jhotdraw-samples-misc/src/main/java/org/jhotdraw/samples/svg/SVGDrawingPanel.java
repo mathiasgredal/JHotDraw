@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.samples.svg;
 
+import org.jhotdraw.util.*;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.ContainerEvent;
@@ -50,8 +51,7 @@ import org.jhotdraw.samples.svg.io.ImageMapOutputFormat;
 import org.jhotdraw.samples.svg.io.SVGOutputFormat;
 import org.jhotdraw.samples.svg.io.SVGZInputFormat;
 import org.jhotdraw.samples.svg.io.SVGZOutputFormat;
-import org.jhotdraw.undo.UndoRedoManager;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.UndoRedoManager;
 import org.jhotdraw.util.prefs.PreferencesUtil;
 
 /**

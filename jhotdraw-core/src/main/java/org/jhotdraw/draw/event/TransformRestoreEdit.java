@@ -8,9 +8,9 @@
 package org.jhotdraw.draw.event;
 
 import org.jhotdraw.draw.figure.Figure;
-import org.jhotdraw.draw.*;
-import javax.swing.undo.*;
 import org.jhotdraw.util.*;
+
+import javax.swing.undo.*;
 
 /**
  * An {@code UndoableEdit} event which can undo a lossy transform of a single

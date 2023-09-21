@@ -22,7 +22,6 @@ import org.jhotdraw.draw.figure.CompositeFigure;
 import org.jhotdraw.draw.DrawingEditor;
 import org.jhotdraw.draw.figure.Figure;
 import org.jhotdraw.draw.figure.TextHolderFigure;
-import org.jhotdraw.draw.action.*;
 import org.jhotdraw.draw.event.FigureAttributeEditorHandler;
 import org.jhotdraw.draw.event.SelectionComponentDisplayer;
 import org.jhotdraw.draw.event.SelectionComponentRepainter;
@@ -35,6 +34,7 @@ import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.formatter.FontFormatter;
 import org.jhotdraw.formatter.JavaNumberFormatter;
 import org.jhotdraw.util.*;
+
 
 /**
  * StrokeToolBar.

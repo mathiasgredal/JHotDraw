@@ -12,7 +12,7 @@ import java.util.*;
 import org.jhotdraw.draw.*;
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.event.FigureSelectionEvent;
-import org.jhotdraw.undo.CompositeEdit;
+import org.jhotdraw.util.undo.CompositeEdit;
 import org.jhotdraw.util.ResourceBundleUtil;
 
 /**

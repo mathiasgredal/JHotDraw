@@ -12,6 +12,8 @@ import java.beans.PropertyChangeListener;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
+
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.action.edit.ClearSelectionAction;
 import org.jhotdraw.action.edit.RedoAction;
 import org.jhotdraw.action.edit.UndoAction;
@@ -77,6 +79,7 @@ public class SVGApplicationModel extends DefaultApplicationModel {
     }
 
     @Override
+    @FeatureEntryPoint(value = "Hello")
     public void initView(Application a, View view) {
         SVGView v = (SVGView) view;
         DrawingEditor editor;

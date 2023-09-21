@@ -34,8 +34,8 @@ import org.jhotdraw.app.action.file.LoadFileAction;
 import org.jhotdraw.app.action.file.LoadRecentFileAction;
 import org.jhotdraw.app.action.file.OpenRecentFileAction;
 import org.jhotdraw.beans.AbstractBean;
-import org.jhotdraw.util.*;
 import org.jhotdraw.util.prefs.PreferencesUtil;
+import org.jhotdraw.util.*;
 
 /**
  * This abstract class can be extended to implement an {@link Application}.

@@ -10,6 +10,7 @@ package org.jhotdraw.samples.pert;
 import java.awt.*;
 import java.util.*;
 import javax.swing.*;
+import org.jhotdraw.util.*;
 import org.jhotdraw.action.edit.CopyAction;
 import org.jhotdraw.action.edit.CutAction;
 import org.jhotdraw.action.edit.DuplicateAction;
@@ -31,8 +32,7 @@ import org.jhotdraw.gui.JPopupButton;
 import org.jhotdraw.gui.action.ButtonFactory;
 import org.jhotdraw.samples.pert.figures.DependencyFigure;
 import org.jhotdraw.samples.pert.figures.TaskFigure;
-import org.jhotdraw.undo.UndoRedoManager;
-import org.jhotdraw.util.*;
+import org.jhotdraw.util.undo.UndoRedoManager;
 
 /**
  * PertPanel.

@@ -12,7 +12,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.geom.*;
 import javax.swing.undo.*;
-import org.jhotdraw.draw.*;
+
 import static org.jhotdraw.draw.AttributeKeys.*;
 import org.jhotdraw.draw.locator.FontSizeLocator;
 import org.jhotdraw.draw.locator.Locator;

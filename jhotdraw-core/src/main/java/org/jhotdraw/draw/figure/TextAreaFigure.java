@@ -22,9 +22,10 @@ import org.jhotdraw.draw.tool.TextAreaEditingTool;
 import org.jhotdraw.draw.tool.Tool;
 import org.jhotdraw.geom.Dimension2DDouble;
 import org.jhotdraw.geom.Insets2D;
-import org.jhotdraw.util.*;
 import org.jhotdraw.xml.DOMInput;
 import org.jhotdraw.xml.DOMOutput;
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
+import org.jhotdraw.util.*;
 
 /**
  * A {@code TextHolderFigure} which holds multiple lines of text in a
@@ -81,6 +82,7 @@ public class TextAreaFigure extends AbstractAttributedDecoratedFigure implements
 
     // DRAWING
     @Override
+    @FeatureEntryPoint(value = "Text")
     protected void drawText(Graphics2D g) {
         if (getText() != null || isEditable()) {
             Font font = getFont();
