@@ -21,20 +21,10 @@ import java.beans.PropertyChangeListener;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.*;
-import javax.swing.AbstractAction;
-import javax.swing.AbstractButton;
-import javax.swing.Action;
-import javax.swing.ButtonGroup;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JColorChooser;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JToggleButton;
-import javax.swing.JToolBar;
+import javax.swing.*;
 import javax.swing.plaf.ColorChooserUI;
 import javax.swing.text.StyledEditorKit;
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.action.edit.CopyAction;
 import org.jhotdraw.action.edit.CutAction;
 import org.jhotdraw.action.edit.DuplicateAction;
@@ -1572,6 +1562,7 @@ public class ButtonFactory {
                 labels, new LinkedList<>());
     }
 
+    @FeatureEntryPoint(value="CreateBoldButton")
     public static JButton createFontStyleBoldButton(DrawingEditor editor,
             ResourceBundleUtil labels, java.util.List<Disposable> dsp) {
         JButton btn;

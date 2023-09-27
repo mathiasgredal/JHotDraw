@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.draw.action;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.Figure;
 import java.awt.*;
 import java.awt.event.*;
@@ -61,6 +62,7 @@ public class AttributeToggler<T> extends AbstractAction {
         return editor;
     }
 
+    @FeatureEntryPoint(value="AttributeToggle")
     @Override
     public void actionPerformed(ActionEvent evt) {
         if (compatibleTextAction != null) {
