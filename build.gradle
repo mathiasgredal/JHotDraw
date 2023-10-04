@@ -1,10 +1,12 @@
 plugins {
     id 'org.javamodularity.moduleplugin' version '1.8.12' apply false
+    id 'com.adarshr.test-logger' version '3.2.0' apply false
 }
 
 allprojects {
     apply plugin: 'java'
     apply plugin: "org.javamodularity.moduleplugin"
+    apply plugin: 'com.adarshr.test-logger'
 
     version = "1.0"
 

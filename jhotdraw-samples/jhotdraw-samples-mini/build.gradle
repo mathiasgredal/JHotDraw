@@ -9,8 +9,6 @@ dependencies {
     implementation project(':jhotdraw-gui')
     implementation project(':jhotdraw-utils')
     implementation project(':jhotdraw-xml')
-    implementation "org.aspectj:aspectjweaver:1.9.20"
-    implementation "dk.sdu.mmmi.featuretracer:featuretracer:1.0"
 }
 
 //application {

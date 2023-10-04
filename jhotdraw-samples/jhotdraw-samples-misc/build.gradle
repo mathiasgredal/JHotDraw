@@ -12,7 +12,6 @@ dependencies {
     implementation project(':jhotdraw-gui')
     implementation project(':jhotdraw-utils')
     implementation "org.devzendo:Quaqua:7.3.4"
-    implementation "net.sourceforge.htmlunit:htmlunit:2.70.0"
 }
 
 application {

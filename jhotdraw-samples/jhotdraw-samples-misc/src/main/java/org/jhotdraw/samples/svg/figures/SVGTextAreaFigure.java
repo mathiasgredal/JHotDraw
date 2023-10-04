@@ -7,6 +7,7 @@
  */
 package org.jhotdraw.samples.svg.figures;
 
+import dk.sdu.mmmi.featuretracer.lib.FeatureEntryPoint;
 import org.jhotdraw.draw.figure.TextHolderFigure;
 import java.awt.*;
 import java.awt.font.*;
@@ -368,6 +369,7 @@ public class SVGTextAreaFigure extends SVGAttributedFigure
         return (getText() == null) ? 4 : Math.max(getText().length(), 4);
     }
 
+    @FeatureEntryPoint(value = "TextAreaFigure")
     @Override
     public <T> void set(AttributeKey<T> key, T newValue) {
         if (key.equals(SVGAttributeKeys.TRANSFORM)
