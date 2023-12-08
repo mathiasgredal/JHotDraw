@@ -62,7 +62,7 @@ public class AttributeToggler<T> extends AbstractAction {
         return editor;
     }
 
-    @FeatureEntryPoint(value="AttributeToggle")
+    @FeatureEntryPoint(value="Strikethrough")
     @Override
     public void actionPerformed(ActionEvent evt) {
         if (compatibleTextAction != null) {
